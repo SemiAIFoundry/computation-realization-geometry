@@ -17,7 +17,7 @@ dependencies = [
   "pandas==2.2.3",
   "matplotlib==3.10.8",
   "scipy==1.17.0",
-  "pytest==9.0.2",
+  "pytest==9.0.3",
 ]
 keywords = [
   "computation-realization geometry",
