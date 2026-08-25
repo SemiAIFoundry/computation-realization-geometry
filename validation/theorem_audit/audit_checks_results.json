@@ -1,0 +1,186 @@
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "check_id": "A01",
+      "theorem_ids": [
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6"
+      ],
+      "passed": true,
+      "description": "Exhaustive contextual-equivalence classes on a finite three-vertex tree; quotient signatures distinguish exactly the required opposite-side outputs.",
+      "details": {
+        "class_counts": {
+          "0->1": 2,
+          "1->0": 2,
+          "1->2": 2,
+          "2->1": 1
+        }
+      }
+    },
+    {
+      "check_id": "A02",
+      "theorem_ids": [
+        "4.8",
+        "4.9",
+        "4.10",
+        "4.12"
+      ],
+      "passed": true,
+      "description": "Random finite-field instances verify that the directional output range across a cut has cardinality 2^rank and that the contextual quotient dimension equals the cut rank.",
+      "details": {
+        "seed": 20260818,
+        "trial_count": 40,
+        "failures": 0
+      }
+    },
+    {
+      "check_id": "A03",
+      "theorem_ids": [
+        "5.8",
+        "5.10",
+        "5.12",
+        "5.13",
+        "5.14",
+        "5.15"
+      ],
+      "passed": true,
+      "description": "Exact arithmetic checks of scalar insufficiency, convexification loss for a nonlinear monotone objective, and positive commitment regret after dropping a needed point.",
+      "details": {
+        "cost_A": 12.0,
+        "cost_B": 13.0,
+        "nonlinear_exact": 2.0,
+        "nonlinear_convex_relaxation": 1.0,
+        "regret": 9.0
+      }
+    },
+    {
+      "check_id": "A04",
+      "theorem_ids": [
+        "6.3"
+      ],
+      "passed": true,
+      "description": "Finite product quotient check for exact semantic additivity and the one-bit fixed-width rounding interval.",
+      "details": {
+        "fixed_width": 2,
+        "bounds": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "check_id": "A05",
+      "theorem_ids": [
+        "8.2",
+        "8.4",
+        "8.5",
+        "8.7",
+        "8.8",
+        "9.1"
+      ],
+      "passed": true,
+      "description": "Synthetic regularly varying and discrete-scale profiles verify exact preferred-factor covariance and phase-ratio recovery under canonical interpolation.",
+      "details": {
+        "max_covariance_error": 5.329070518200751e-15,
+        "phase_means": [
+          2.4003190610804026,
+          3.200423220889738
+        ],
+        "derived_index": 1.4705531554732159
+      }
+    },
+    {
+      "check_id": "A06",
+      "theorem_ids": [
+        "10.1",
+        "10.3",
+        "10.4"
+      ],
+      "passed": true,
+      "description": "Numerical adversarial check of a two-phase positive cocycle with signed vanishing relative perturbations: initial directions are forgotten and the two-step gain approaches the period-product spectral radius.",
+      "details": {
+        "max_cross_initial_hilbert_distance": 2.2204460492503128e-16,
+        "period_product_spectral_radius": 7.872983346207417,
+        "observed_two_step_gain": 7.872982072101401
+      }
+    },
+    {
+      "check_id": "A07",
+      "theorem_ids": [
+        "11.1",
+        "11.2",
+        "11.3"
+      ],
+      "passed": true,
+      "description": "Finite-difference validation of the traffic-weighted slope and exponent-variance curvature identities for a positive mixture of power modes.",
+      "details": {
+        "analytic_slope": 0.7922173250291087,
+        "numeric_slope": 0.7922173250296537,
+        "analytic_curvature": 0.04707243871985134,
+        "numeric_curvature": 0.04707345624410663
+      }
+    },
+    {
+      "check_id": "A08",
+      "theorem_ids": [
+        "12.2",
+        "12.3",
+        "12.4",
+        "16.1",
+        "16.2"
+      ],
+      "passed": true,
+      "description": "Synthetic cap-collapse and demand/service-ratio checks verify the registered regular-variation limits and p-q strain index.",
+      "details": {
+        "late_cap_max_error": 0.00048040613608013594,
+        "late_strain_ratio": 1.08470560609846,
+        "target_ratio": 1.086734862526058
+      }
+    },
+    {
+      "check_id": "A09",
+      "theorem_ids": [
+        "15.4",
+        "15.5",
+        "15.7",
+        "15.8"
+      ],
+      "passed": true,
+      "description": "Finite-ledger enumeration verifies argmin-hitting retention: {a,b} preserves all technologies while no singleton does.",
+      "details": {
+        "argmins": {
+          "t0": [
+            "a"
+          ],
+          "t1": [
+            "b"
+          ],
+          "t2": [
+            "a",
+            "b"
+          ]
+        },
+        "retained": [
+          "a",
+          "b"
+        ]
+      }
+    },
+    {
+      "check_id": "A10",
+      "theorem_ids": [
+        "18.4"
+      ],
+      "passed": true,
+      "description": "Maximum-weight assignment on all divisor pairs of K=12 verifies the nested closed form and records nonnested deviations.",
+      "details": {
+        "moved_fraction_4_to_6": 0.5,
+        "moved_fraction_3_to_4": 0.513888888888889,
+        "pair_count": 36
+      }
+    }
+  ]
+}
