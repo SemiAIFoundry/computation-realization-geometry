@@ -82,3 +82,15 @@ def test_current_validation_runtime_is_supported() -> None:
     environment = report()
     assert environment["python_supported"] is True
     assert environment["dependency_match"] is True
+
+
+def test_wheel_build_artifacts_remain_outside_the_attested_checkout() -> None:
+    root = Path(__file__).resolve().parents[1]
+    workflow = (root / ".github" / "workflows" / "validation.yml").read_text(encoding="utf-8")
+
+    assert '--wheel-dir "${RUNNER_TEMP}/dist-a"' in workflow
+    assert '--wheel-dir "${RUNNER_TEMP}/dist-b"' in workflow
+    assert 'tools/verify_wheel.py "${RUNNER_TEMP}/dist-a" "${RUNNER_TEMP}/dist-b"' in workflow
+    assert '"${RUNNER_TEMP}"/dist-a/*.whl' in workflow
+    assert "--wheel-dir dist-a" not in workflow
+    assert "--wheel-dir dist-b" not in workflow

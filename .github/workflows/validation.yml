@@ -94,17 +94,17 @@ jobs:
           mkdir "${RUNNER_TEMP}/source-a" "${RUNNER_TEMP}/source-b"
           tar -xf "${RUNNER_TEMP}/source.tar" -C "${RUNNER_TEMP}/source-a"
           tar -xf "${RUNNER_TEMP}/source.tar" -C "${RUNNER_TEMP}/source-b"
-          python -m pip wheel --no-build-isolation --no-deps --wheel-dir dist-a "${RUNNER_TEMP}/source-a"
-          python -m pip wheel --no-build-isolation --no-deps --wheel-dir dist-b "${RUNNER_TEMP}/source-b"
+          python -m pip wheel --no-build-isolation --no-deps --wheel-dir "${RUNNER_TEMP}/dist-a" "${RUNNER_TEMP}/source-a"
+          python -m pip wheel --no-build-isolation --no-deps --wheel-dir "${RUNNER_TEMP}/dist-b" "${RUNNER_TEMP}/source-b"
       - name: Verify reproducible wheel and legal payload
         if: matrix.python-version == '3.12'
-        run: python tools/verify_wheel.py dist-a dist-b
+        run: python tools/verify_wheel.py "${RUNNER_TEMP}/dist-a" "${RUNNER_TEMP}/dist-b"
       - name: Verify a normal wheel installation outside the checkout
         if: matrix.python-version == '3.12'
         run: |
           python -m venv "${RUNNER_TEMP}/crg-installed"
           "${RUNNER_TEMP}/crg-installed/bin/python" -m pip install --require-hashes -r requirements/validation.lock
-          "${RUNNER_TEMP}/crg-installed/bin/python" -m pip install --no-deps dist-a/*.whl
+          "${RUNNER_TEMP}/crg-installed/bin/python" -m pip install --no-deps "${RUNNER_TEMP}"/dist-a/*.whl
           "${RUNNER_TEMP}/crg-installed/bin/python" -m pip check
           cd "${RUNNER_TEMP}"
           "${RUNNER_TEMP}/crg-installed/bin/crg-validation" --root "${GITHUB_WORKSPACE}" manifest --verify
