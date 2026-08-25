@@ -1,0 +1,5 @@
+name,payload_bytes_s,energy_pj_bit,capability,evidence
+UCIe-S-declared,64000000000.0,0.5,standard-package aggregate payload,declared cluster calibrated to UCIe rate classes
+UCIe-A32-declared,256000000000.0,0.25,advanced-package aggregate payload,declared cluster calibrated to UCIe rate classes
+UCIe-A64-declared,512000000000.0,0.25,advanced-package aggregate payload,declared cluster calibrated to the UCIe 64-GT/s class
+3D-vertical-declared,4000000000000.0,0.05,hybrid-bonded vertical aggregate payload,declared sensitivity point; not an official UCIe throughput guarantee

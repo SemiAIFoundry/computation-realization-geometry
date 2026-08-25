@@ -1,0 +1,37 @@
+workload_id,policy,retained_ids,retained_count,serialized_retention_bytes,construction_ledger_hit,universal_geometry_preserved
+W0,Initial winner,r0.fused_materialize,1,24,False,False
+W0,Initial full PPA Pareto,r0.fused_materialize;r4.replicated_split_recompute,2,57,False,False
+W0,Construction robust-Pareto union,r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r3.split_recompute;r4.replicated_split_recompute,5,125,True,True
+W0,Robust-DSE minimax (matched budget),r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r4.replicated_split_recompute,4,103,True,False
+W0,Robust-DSE mean-regret (matched budget),r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r4.replicated_split_recompute,4,103,True,False
+W0,Response-diversity DSE (matched budget),r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r4.replicated_split_recompute,4,103,True,False
+W0,CRG construction-ledger cover,r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r4.replicated_split_recompute,4,103,True,False
+W0,CRG universal monotone,r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r3.split_recompute;r4.replicated_split_recompute,5,125,True,True
+W0,Held-out oracle argmin cover (analysis only),r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r3.split_recompute;r4.replicated_split_recompute,5,125,,True
+W1,Initial winner,r2.split_materialize,1,24,False,False
+W1,Initial full PPA Pareto,r0.fused_materialize;r2.split_materialize;r4.replicated_split_recompute,3,81,True,False
+W1,Construction robust-Pareto union,r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r3.split_recompute;r4.replicated_split_recompute,5,125,True,True
+W1,Robust-DSE minimax (matched budget),r0.fused_materialize;r2.split_materialize;r4.replicated_split_recompute,3,81,True,False
+W1,Robust-DSE mean-regret (matched budget),r0.fused_materialize;r2.split_materialize;r4.replicated_split_recompute,3,81,True,False
+W1,Response-diversity DSE (matched budget),r0.fused_materialize;r1.fused_recompute;r3.split_recompute,3,68,False,False
+W1,CRG construction-ledger cover,r0.fused_materialize;r2.split_materialize;r4.replicated_split_recompute,3,81,True,False
+W1,CRG universal monotone,r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r3.split_recompute;r4.replicated_split_recompute,5,125,True,True
+W1,Held-out oracle argmin cover (analysis only),r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r4.replicated_split_recompute,4,103,,False
+W2,Initial winner,r2.split_materialize,1,24,False,False
+W2,Initial full PPA Pareto,r0.fused_materialize;r2.split_materialize,2,48,True,False
+W2,Construction robust-Pareto union,r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r4.replicated_split_recompute,4,103,True,False
+W2,Robust-DSE minimax (matched budget),r0.fused_materialize;r2.split_materialize,2,48,True,False
+W2,Robust-DSE mean-regret (matched budget),r0.fused_materialize;r2.split_materialize,2,48,True,False
+W2,Response-diversity DSE (matched budget),r0.fused_materialize;r3.split_recompute,2,46,False,False
+W2,CRG construction-ledger cover,r0.fused_materialize;r2.split_materialize,2,48,True,False
+W2,CRG universal monotone,r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r3.split_recompute;r4.replicated_split_recompute,5,125,True,True
+W2,Held-out oracle argmin cover (analysis only),r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r3.split_recompute;r4.replicated_split_recompute,5,125,,True
+W3,Initial winner,r0.fused_materialize,1,24,False,False
+W3,Initial full PPA Pareto,r0.fused_materialize;r1.fused_recompute;r4.replicated_split_recompute,3,79,False,False
+W3,Construction robust-Pareto union,r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r3.split_recompute;r4.replicated_split_recompute,5,125,True,True
+W3,Robust-DSE minimax (matched budget),r0.fused_materialize;r2.split_materialize,2,48,True,False
+W3,Robust-DSE mean-regret (matched budget),r0.fused_materialize;r2.split_materialize,2,48,True,False
+W3,Response-diversity DSE (matched budget),r0.fused_materialize;r3.split_recompute,2,46,False,False
+W3,CRG construction-ledger cover,r0.fused_materialize;r2.split_materialize,2,48,True,False
+W3,CRG universal monotone,r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r3.split_recompute;r4.replicated_split_recompute,5,125,True,True
+W3,Held-out oracle argmin cover (analysis only),r0.fused_materialize;r1.fused_recompute;r2.split_materialize;r3.split_recompute;r4.replicated_split_recompute,5,125,,True

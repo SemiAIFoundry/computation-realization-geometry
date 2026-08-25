@@ -1,0 +1,20 @@
+{
+  "ledger_format_version": "1.0.0",
+  "study_id": "crg.retention.adversarial.v2",
+  "frozen_date": "2026-08-22",
+  "public_release_date": "2026-08-25",
+  "purpose": "Frozen scenario and candidate ledger enabling exact public reanalysis of the reported finite retention study.",
+  "records": {
+    "workloads": 4,
+    "candidate_registry": 24,
+    "scenarios": 26624,
+    "scenario_candidate_evaluations": 159744
+  },
+  "public_ledger_sha256": {
+    "candidate_registry.csv": "ccbd262f944dc64b5511b5b0d09b2a71d3ecb2174a697e55fdf592ec08904715",
+    "scenario_candidate_evaluations.csv.gz": "4a81650988ac294bb15670314fca51cfa3000c8fb0b7fe2ff9d0d00162222c43",
+    "scenarios.csv.gz": "d747b9c75226f577cf2960c851143e05c2f438e7b3a0f246134194f608d0ae5e",
+    "workloads.csv": "c8868ee44ce3a8e8ea861e77023e3e86b8f03c37a7cbf72682d04579bd27f99d"
+  },
+  "scope": "The ledger supports exact recalculation of the released finite study and does not establish completeness beyond the preregistered candidate and scenario families."
+}

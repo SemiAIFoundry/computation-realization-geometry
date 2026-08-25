@@ -1,0 +1,84 @@
+{
+  "certificate_winners": [
+    {
+      "all_class_gap_ms": 0.04603813083551515,
+      "nonhybrid_gap_ms": 2.3994246019377017,
+      "scenario": "standard package / N=16k",
+      "winner": "U-universal-fused",
+      "winner_ms": 2.255868410940235
+    },
+    {
+      "all_class_gap_ms": 0.04435004885146917,
+      "nonhybrid_gap_ms": 0.08271601721825854,
+      "scenario": "advanced package / N=16k",
+      "winner": "S-heterogeneous-split",
+      "winner_ms": 2.1731523937219768
+    },
+    {
+      "all_class_gap_ms": 1.0865761968609884,
+      "nonhybrid_gap_ms": 1.0865761968609884,
+      "scenario": "vertical package / N=16k",
+      "winner": "V-vertical-specialized",
+      "winner_ms": 1.0865761968609884
+    }
+  ],
+  "default_contract": "llama31-gqa-block-rounded-causal128-dense-bf16-shared-package-aggregate-v1",
+  "eta_boundary": 0.8812003968253965,
+  "internal_tests": {
+    "block_staircase_complete_dominance_intervals": "pass",
+    "dense_padded_fa_equals_ff_at_n_4d": "pass",
+    "executed_pair_policy_order": "pass",
+    "general_layout_assignment_and_counterexample": "pass",
+    "gqa_projection_shape_oracle": "pass",
+    "h_resource_conservation": "pass",
+    "hybrid_envelope_dominance": "pass",
+    "review4_compatibility_numbers": "pass",
+    "split_complete_allocation_sweep": "pass"
+  },
+  "results_sha256": "7ed7d28fdb901122063fa27c57d553c83885039f485cf776d2292fd046aa7221",
+  "ucie_s_dominance_within_audited_context": {
+    "dominance_intervals": [
+      {
+        "end_context": 198912,
+        "relation": "U-strictly-faster",
+        "start_context": 1
+      },
+      {
+        "end_context": 198926,
+        "relation": "S-no-slower",
+        "start_context": 198913
+      },
+      {
+        "end_context": 199040,
+        "relation": "U-strictly-faster",
+        "start_context": 198927
+      },
+      {
+        "end_context": 1048576,
+        "relation": "S-no-slower",
+        "start_context": 199041
+      }
+    ],
+    "earliest_s_no_slower_context": 198913,
+    "first_sustained_s_no_slower_context": 199041,
+    "max_context": 1048576,
+    "min_context": 1,
+    "s_no_slower_is_monotone_nondecreasing": false,
+    "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range"
+  },
+  "ucie_s_dominance_within_declared_context": {
+    "dominance_intervals": [
+      {
+        "end_context": 131072,
+        "relation": "U-strictly-faster",
+        "start_context": 1
+      }
+    ],
+    "earliest_s_no_slower_context": null,
+    "first_sustained_s_no_slower_context": null,
+    "max_context": 131072,
+    "min_context": 1,
+    "s_no_slower_is_monotone_nondecreasing": true,
+    "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range"
+  }
+}

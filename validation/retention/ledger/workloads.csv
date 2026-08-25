@@ -1,0 +1,5 @@
+workload_id,sequence_length,d_model,d_ff,resource_contract_id
+W0,48,48,96,crg.resource.transformer_microblock.v1
+W1,64,64,128,crg.resource.transformer_microblock.v1
+W2,80,80,160,crg.resource.transformer_microblock.v1
+W3,96,64,192,crg.resource.transformer_microblock.v1

@@ -1,0 +1,1486 @@
+{
+  "attention_modes": [
+    {
+      "d2d_multiplier": 1.0,
+      "evidence": "FlatAttention portability hypothesis: reported relative maxima",
+      "fast_state_mib": 8.0,
+      "hbm_multiplier": 16.0,
+      "name": "Flash-local",
+      "utilization": 0.21780487804878051
+    },
+    {
+      "d2d_multiplier": 0.5,
+      "evidence": "28-MiB declared tile plus swept imported utilization",
+      "fast_state_mib": 28.0,
+      "hbm_multiplier": 1.0,
+      "name": "Flat-collective",
+      "utilization": 0.893
+    }
+  ],
+  "certificate_scenarios": [
+    {
+      "all_class_gap_ms": 0.04603813083551515,
+      "all_class_relative_gap": 0.020408163265306145,
+      "class_times_ms": {
+        "H-static-fused": 4.655293012877937,
+        "M-memory-centric-attention": 15.319862013678932,
+        "S-heterogeneous-split": 8.388608000000001,
+        "U-universal-fused": 2.255868410940235,
+        "X-dual-mode-split-with-universal-fallback": 2.3019065417757503
+      },
+      "nonhybrid_gap_ms": 2.3994246019377017,
+      "nonhybrid_runner_up": "H-static-fused",
+      "package": "UCIe-S-declared",
+      "phase_boundary_distance": {
+        "eta_boundary": 0.21780487804878051,
+        "eta_boundary_distance": 0.5821951219512196,
+        "nearest_normalized_axis": "package_payload_log2",
+        "nearest_normalized_distance": 0.13567075625597508,
+        "package_boundary_bytes_s": 237988576548.32648,
+        "package_boundary_distance_log2_ratio": 1.8947485156079171,
+        "search_domain": {
+          "eta_universal": [
+            0.1,
+            1.0
+          ],
+          "package_bytes_s": [
+            1000000000.0,
+            16000000000000.0
+          ]
+        },
+        "winner": "U-universal-fused"
+      },
+      "scenario": "standard package / N=16k",
+      "second_best": "X-dual-mode-split-with-universal-fallback",
+      "second_best_ms": 2.3019065417757503,
+      "winner": "U-universal-fused",
+      "winner_allocation_optima": {
+        "objective": "minimum steady-state initiation interval",
+        "optimal_compute_partitions": [
+          [
+            32,
+            32
+          ]
+        ],
+        "optimal_hbm_partitions": [
+          [
+            8,
+            8
+          ]
+        ],
+        "optimal_witness_count": 1,
+        "reported_witness": {
+          "attention_chiplets": 32,
+          "attention_hbm_stacks": 8,
+          "mlp_chiplets": 32,
+          "mlp_hbm_stacks": 8
+        },
+        "tie_break": "minimum latency, then architecture/schedule and lexicographic attention compute/HBM allocation"
+      },
+      "winner_ms": 2.255868410940235,
+      "winner_signature": {
+        "allocation_witnesses_tested": 1,
+        "architecture": "U-universal-fused",
+        "attention_chiplets": 32,
+        "attention_hbm_stacks": 8,
+        "attention_mode": "Flat-collective@eta=0.800000",
+        "attention_s": 0.000897648164864,
+        "bottleneck": "A:compute+F:compute",
+        "bridge_bytes": 0.0,
+        "bridge_s": 0.0,
+        "compute_share_sum": 1.0,
+        "context": 16384,
+        "contract_name": "llama31-gqa-block-rounded-causal128-dense-bf16-shared-package-aggregate-v1",
+        "fabric_share_sum": 1.0,
+        "fast_state_mib": 28.0,
+        "hbm_share_sum": 1.0,
+        "initiation_interval_s": 0.0022558684109402352,
+        "latency_s": 0.0022558684109402352,
+        "link_energy_j": 0.0,
+        "mlp_chiplets": 32,
+        "mlp_hbm_stacks": 8,
+        "mlp_mode": "2D-low-replication",
+        "mlp_s": 0.0013582202460762354,
+        "notes": "Shared fast-state pool; compute/HBM/fabric are conserved by sequential full-resource reuse.",
+        "package_bytes_per_interval": 0.0,
+        "schedule": "sequential-full-resource-reuse",
+        "technology": "local-fabric",
+        "workload_kind": "prefill"
+      }
+    },
+    {
+      "all_class_gap_ms": 0.04435004885146917,
+      "all_class_relative_gap": 0.020408163265306145,
+      "class_times_ms": {
+        "H-static-fused": 4.655293012877937,
+        "M-memory-centric-attention": 15.319862013678932,
+        "S-heterogeneous-split": 2.1731523937219768,
+        "U-universal-fused": 2.255868410940235,
+        "X-dual-mode-split-with-universal-fallback": 2.217502442573446
+      },
+      "nonhybrid_gap_ms": 0.08271601721825854,
+      "nonhybrid_runner_up": "U-universal-fused",
+      "package": "UCIe-A64-declared",
+      "phase_boundary_distance": {
+        "eta_boundary": 0.8812003968253965,
+        "eta_boundary_distance": 0.08120039682539648,
+        "nearest_normalized_axis": "package_payload_log2",
+        "nearest_normalized_distance": 0.07913995103060016,
+        "package_boundary_bytes_s": 237988576548.32648,
+        "package_boundary_distance_log2_ratio": 1.1052514843920829,
+        "search_domain": {
+          "eta_universal": [
+            0.1,
+            1.0
+          ],
+          "package_bytes_s": [
+            1000000000.0,
+            16000000000000.0
+          ]
+        },
+        "winner": "S-heterogeneous-split"
+      },
+      "scenario": "advanced package / N=16k",
+      "second_best": "X-dual-mode-split-with-universal-fallback",
+      "second_best_ms": 2.217502442573446,
+      "winner": "S-heterogeneous-split",
+      "winner_allocation_optima": {
+        "objective": "minimum steady-state initiation interval",
+        "optimal_compute_partitions": [
+          [
+            12,
+            20
+          ]
+        ],
+        "optimal_hbm_partitions": [
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            1
+          ]
+        ],
+        "optimal_witness_count": 7,
+        "reported_witness": {
+          "attention_chiplets": 12,
+          "attention_hbm_stacks": 1,
+          "mlp_chiplets": 20,
+          "mlp_hbm_stacks": 7
+        },
+        "tie_break": "minimum latency, then architecture/schedule and lexicographic attention compute/HBM allocation"
+      },
+      "winner_ms": 2.1731523937219768,
+      "winner_signature": {
+        "allocation_witnesses_tested": 217,
+        "architecture": "S-heterogeneous-split",
+        "attention_chiplets": 12,
+        "attention_hbm_stacks": 1,
+        "attention_mode": "Flat-collective",
+        "attention_s": 0.002144437571903546,
+        "bottleneck": "mlp-compute",
+        "bridge_bytes": 268435456.0,
+        "bridge_s": 0.000524288,
+        "compute_share_sum": 1.0,
+        "context": 16384,
+        "contract_name": "llama31-gqa-block-rounded-causal128-dense-bf16-shared-package-aggregate-v1",
+        "fabric_share_sum": 1.0,
+        "fast_state_mib": 28.0,
+        "hbm_share_sum": 1.0,
+        "initiation_interval_s": 0.0021731523937219767,
+        "latency_s": 0.004841877965625523,
+        "link_energy_j": 0.001073741824,
+        "mlp_chiplets": 20,
+        "mlp_hbm_stacks": 7,
+        "mlp_mode": "2.5D-c4",
+        "mlp_s": 0.0021731523937219767,
+        "notes": "All 31x7 legal integer compute/HBM allocations are re-swept at each (N, workload, technology, contract) point.",
+        "package_bytes_per_interval": 536870912.0,
+        "schedule": "steady-pipeline-disjoint-conserved-pools",
+        "technology": "UCIe-A64-declared",
+        "workload_kind": "prefill"
+      }
+    },
+    {
+      "all_class_gap_ms": 1.0865761968609884,
+      "all_class_relative_gap": 1.0,
+      "class_times_ms": {
+        "H-static-fused": 4.655293012877937,
+        "M-memory-centric-attention": 15.319862013678932,
+        "S-heterogeneous-split": 2.1731523937219768,
+        "U-universal-fused": 2.255868410940235,
+        "V-vertical-specialized": 1.0865761968609884,
+        "X-dual-mode-split-with-universal-fallback": 2.217502442573446
+      },
+      "nonhybrid_gap_ms": 1.0865761968609884,
+      "nonhybrid_runner_up": "S-heterogeneous-split",
+      "package": "3D-vertical-declared",
+      "phase_boundary_distance": {
+        "eta_boundary": null,
+        "eta_boundary_distance": null,
+        "nearest_normalized_axis": "package_payload_log2",
+        "nearest_normalized_distance": 0.3442700578227295,
+        "package_boundary_bytes_s": 142793145928.99515,
+        "package_boundary_distance_log2_ratio": 4.8080013632203835,
+        "search_domain": {
+          "eta_universal": [
+            0.1,
+            1.0
+          ],
+          "package_bytes_s": [
+            1000000000.0,
+            16000000000000.0
+          ]
+        },
+        "winner": "V-vertical-specialized"
+      },
+      "scenario": "vertical package / N=16k",
+      "second_best": "S-heterogeneous-split",
+      "second_best_ms": 2.1731523937219768,
+      "winner": "V-vertical-specialized",
+      "winner_allocation_optima": {
+        "objective": "minimum steady-state initiation interval",
+        "optimal_compute_partitions": [
+          [
+            12,
+            20
+          ]
+        ],
+        "optimal_hbm_partitions": [
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            1
+          ]
+        ],
+        "optimal_witness_count": 7,
+        "reported_witness": {
+          "attention_chiplets": 12,
+          "attention_hbm_stacks": 1,
+          "mlp_chiplets": 20,
+          "mlp_hbm_stacks": 7
+        },
+        "tie_break": "minimum latency, then architecture/schedule and lexicographic attention compute/HBM allocation"
+      },
+      "winner_ms": 1.0865761968609884,
+      "winner_signature": {
+        "allocation_witnesses_tested": 217,
+        "architecture": "V-vertical-specialized",
+        "attention_chiplets": 12,
+        "attention_hbm_stacks": 1,
+        "attention_mode": "vertical-flat",
+        "attention_s": 0.001072218785951773,
+        "bottleneck": "mlp-compute",
+        "bridge_bytes": 268435456.0,
+        "bridge_s": 6.7108864e-05,
+        "compute_share_sum": 1.0,
+        "context": 16384,
+        "contract_name": "llama31-gqa-block-rounded-causal128-dense-bf16-shared-package-aggregate-v1",
+        "fabric_share_sum": 1.0,
+        "fast_state_mib": 64.0,
+        "hbm_share_sum": 1.0,
+        "initiation_interval_s": 0.0010865761968609884,
+        "latency_s": 0.0022259038468127614,
+        "link_energy_j": 0.00012884901888,
+        "mlp_chiplets": 20,
+        "mlp_hbm_stacks": 7,
+        "mlp_mode": "2.5D-c4",
+        "mlp_s": 0.0010865761968609884,
+        "notes": "All 31x7 legal integer compute/HBM allocations are re-swept at each (N, workload, technology, contract) point.",
+        "package_bytes_per_interval": 322122547.2,
+        "schedule": "steady-pipeline-disjoint-conserved-pools",
+        "technology": "3D-vertical-declared",
+        "workload_kind": "prefill"
+      }
+    }
+  ],
+  "context_dominance_interval_rows": 32,
+  "contract_dominance_analyses": [
+    {
+      "audited_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-dense-padded-dense-bf16-shared-package-aggregate-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 99640,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 1048576,
+            "relation": "S-no-slower",
+            "start_context": 99641
+          }
+        ],
+        "earliest_s_no_slower_context": 99641,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 99641,
+        "integer_contexts_audited": 1048576,
+        "max_context": 1048576,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "dense-padded",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 1048576,
+            "start_context": 99641
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 1
+      },
+      "contract_name": "llama31-gqa-dense-padded-dense-bf16-shared-package-aggregate-v1",
+      "declared_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-dense-padded-dense-bf16-shared-package-aggregate-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 99640,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 131072,
+            "relation": "S-no-slower",
+            "start_context": 99641
+          }
+        ],
+        "earliest_s_no_slower_context": 99641,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 99641,
+        "integer_contexts_audited": 131072,
+        "max_context": 131072,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "dense-padded",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 131072,
+            "start_context": 99641
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 1
+      },
+      "package_accounting": "shared-package-aggregate",
+      "pair_policy": "dense-padded",
+      "peak_basis": "dense-bf16"
+    },
+    {
+      "audited_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-dense-padded-dense-bf16-separate-internal-local-fabric-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 37140,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 1048576,
+            "relation": "S-no-slower",
+            "start_context": 37141
+          }
+        ],
+        "earliest_s_no_slower_context": 37141,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 37141,
+        "integer_contexts_audited": 1048576,
+        "max_context": 1048576,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "dense-padded",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 1048576,
+            "start_context": 37141
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 1
+      },
+      "contract_name": "llama31-gqa-dense-padded-dense-bf16-separate-internal-local-fabric-v1",
+      "declared_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-dense-padded-dense-bf16-separate-internal-local-fabric-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 37140,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 131072,
+            "relation": "S-no-slower",
+            "start_context": 37141
+          }
+        ],
+        "earliest_s_no_slower_context": 37141,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 37141,
+        "integer_contexts_audited": 131072,
+        "max_context": 131072,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "dense-padded",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 131072,
+            "start_context": 37141
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 1
+      },
+      "package_accounting": "separate-internal-local-fabric",
+      "pair_policy": "dense-padded",
+      "peak_basis": "dense-bf16"
+    },
+    {
+      "audited_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-dense-padded-sparse-bf16-sensitivity-shared-package-aggregate-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 224640,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 1048576,
+            "relation": "S-no-slower",
+            "start_context": 224641
+          }
+        ],
+        "earliest_s_no_slower_context": 224641,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 224641,
+        "integer_contexts_audited": 1048576,
+        "max_context": 1048576,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "dense-padded",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 1048576,
+            "start_context": 224641
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 1
+      },
+      "contract_name": "llama31-gqa-dense-padded-sparse-bf16-sensitivity-shared-package-aggregate-v1",
+      "declared_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-dense-padded-sparse-bf16-sensitivity-shared-package-aggregate-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 131072,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          }
+        ],
+        "earliest_s_no_slower_context": null,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": null,
+        "integer_contexts_audited": 131072,
+        "max_context": 131072,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "dense-padded",
+        "s_no_slower_intervals": [],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 0
+      },
+      "package_accounting": "shared-package-aggregate",
+      "pair_policy": "dense-padded",
+      "peak_basis": "sparse-bf16-sensitivity"
+    },
+    {
+      "audited_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-dense-padded-sparse-bf16-sensitivity-separate-internal-local-fabric-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 99640,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 1048576,
+            "relation": "S-no-slower",
+            "start_context": 99641
+          }
+        ],
+        "earliest_s_no_slower_context": 99641,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 99641,
+        "integer_contexts_audited": 1048576,
+        "max_context": 1048576,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "dense-padded",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 1048576,
+            "start_context": 99641
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 1
+      },
+      "contract_name": "llama31-gqa-dense-padded-sparse-bf16-sensitivity-separate-internal-local-fabric-v1",
+      "declared_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-dense-padded-sparse-bf16-sensitivity-separate-internal-local-fabric-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 99640,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 131072,
+            "relation": "S-no-slower",
+            "start_context": 99641
+          }
+        ],
+        "earliest_s_no_slower_context": 99641,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 99641,
+        "integer_contexts_audited": 131072,
+        "max_context": 131072,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "dense-padded",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 131072,
+            "start_context": 99641
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 1
+      },
+      "package_accounting": "separate-internal-local-fabric",
+      "pair_policy": "dense-padded",
+      "peak_basis": "sparse-bf16-sensitivity"
+    },
+    {
+      "audited_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-ideal-causal-dense-bf16-shared-package-aggregate-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 199280,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 1048576,
+            "relation": "S-no-slower",
+            "start_context": 199281
+          }
+        ],
+        "earliest_s_no_slower_context": 199281,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 199281,
+        "integer_contexts_audited": 1048576,
+        "max_context": 1048576,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "ideal-causal",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 1048576,
+            "start_context": 199281
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 1
+      },
+      "contract_name": "llama31-gqa-ideal-causal-dense-bf16-shared-package-aggregate-v1",
+      "declared_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-ideal-causal-dense-bf16-shared-package-aggregate-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 131072,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          }
+        ],
+        "earliest_s_no_slower_context": null,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": null,
+        "integer_contexts_audited": 131072,
+        "max_context": 131072,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "ideal-causal",
+        "s_no_slower_intervals": [],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 0
+      },
+      "package_accounting": "shared-package-aggregate",
+      "pair_policy": "ideal-causal",
+      "peak_basis": "dense-bf16"
+    },
+    {
+      "audited_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-ideal-causal-dense-bf16-separate-internal-local-fabric-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 74280,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 1048576,
+            "relation": "S-no-slower",
+            "start_context": 74281
+          }
+        ],
+        "earliest_s_no_slower_context": 74281,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 74281,
+        "integer_contexts_audited": 1048576,
+        "max_context": 1048576,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "ideal-causal",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 1048576,
+            "start_context": 74281
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 1
+      },
+      "contract_name": "llama31-gqa-ideal-causal-dense-bf16-separate-internal-local-fabric-v1",
+      "declared_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-ideal-causal-dense-bf16-separate-internal-local-fabric-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 74280,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 131072,
+            "relation": "S-no-slower",
+            "start_context": 74281
+          }
+        ],
+        "earliest_s_no_slower_context": 74281,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 74281,
+        "integer_contexts_audited": 131072,
+        "max_context": 131072,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "ideal-causal",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 131072,
+            "start_context": 74281
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 1
+      },
+      "package_accounting": "separate-internal-local-fabric",
+      "pair_policy": "ideal-causal",
+      "peak_basis": "dense-bf16"
+    },
+    {
+      "audited_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-ideal-causal-sparse-bf16-sensitivity-shared-package-aggregate-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 449280,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 1048576,
+            "relation": "S-no-slower",
+            "start_context": 449281
+          }
+        ],
+        "earliest_s_no_slower_context": 449281,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 449281,
+        "integer_contexts_audited": 1048576,
+        "max_context": 1048576,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "ideal-causal",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 1048576,
+            "start_context": 449281
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 1
+      },
+      "contract_name": "llama31-gqa-ideal-causal-sparse-bf16-sensitivity-shared-package-aggregate-v1",
+      "declared_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-ideal-causal-sparse-bf16-sensitivity-shared-package-aggregate-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 131072,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          }
+        ],
+        "earliest_s_no_slower_context": null,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": null,
+        "integer_contexts_audited": 131072,
+        "max_context": 131072,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "ideal-causal",
+        "s_no_slower_intervals": [],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 0
+      },
+      "package_accounting": "shared-package-aggregate",
+      "pair_policy": "ideal-causal",
+      "peak_basis": "sparse-bf16-sensitivity"
+    },
+    {
+      "audited_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-ideal-causal-sparse-bf16-sensitivity-separate-internal-local-fabric-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 199280,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 1048576,
+            "relation": "S-no-slower",
+            "start_context": 199281
+          }
+        ],
+        "earliest_s_no_slower_context": 199281,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 199281,
+        "integer_contexts_audited": 1048576,
+        "max_context": 1048576,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "ideal-causal",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 1048576,
+            "start_context": 199281
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 1
+      },
+      "contract_name": "llama31-gqa-ideal-causal-sparse-bf16-sensitivity-separate-internal-local-fabric-v1",
+      "declared_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-ideal-causal-sparse-bf16-sensitivity-separate-internal-local-fabric-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 131072,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          }
+        ],
+        "earliest_s_no_slower_context": null,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": null,
+        "integer_contexts_audited": 131072,
+        "max_context": 131072,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "ideal-causal",
+        "s_no_slower_intervals": [],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 0
+      },
+      "package_accounting": "separate-internal-local-fabric",
+      "pair_policy": "ideal-causal",
+      "peak_basis": "sparse-bf16-sensitivity"
+    },
+    {
+      "audited_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-block-rounded-causal128-dense-bf16-shared-package-aggregate-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 198912,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 198926,
+            "relation": "S-no-slower",
+            "start_context": 198913
+          },
+          {
+            "end_context": 199040,
+            "relation": "U-strictly-faster",
+            "start_context": 198927
+          },
+          {
+            "end_context": 1048576,
+            "relation": "S-no-slower",
+            "start_context": 199041
+          }
+        ],
+        "earliest_s_no_slower_context": 198913,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 199041,
+        "integer_contexts_audited": 1048576,
+        "max_context": 1048576,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": false,
+        "package": "UCIe-S-declared",
+        "pair_policy": "block-rounded-causal",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 198926,
+            "start_context": 198913
+          },
+          {
+            "end_context": 1048576,
+            "start_context": 199041
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": false,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 3
+      },
+      "contract_name": "llama31-gqa-block-rounded-causal128-dense-bf16-shared-package-aggregate-v1",
+      "declared_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-block-rounded-causal128-dense-bf16-shared-package-aggregate-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 131072,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          }
+        ],
+        "earliest_s_no_slower_context": null,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": null,
+        "integer_contexts_audited": 131072,
+        "max_context": 131072,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "block-rounded-causal",
+        "s_no_slower_intervals": [],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 0
+      },
+      "package_accounting": "shared-package-aggregate",
+      "pair_policy": "block-rounded-causal",
+      "peak_basis": "dense-bf16"
+    },
+    {
+      "audited_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-block-rounded-causal128-dense-bf16-separate-internal-local-fabric-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 73984,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 74070,
+            "relation": "S-no-slower",
+            "start_context": 73985
+          },
+          {
+            "end_context": 74112,
+            "relation": "U-strictly-faster",
+            "start_context": 74071
+          },
+          {
+            "end_context": 1048576,
+            "relation": "S-no-slower",
+            "start_context": 74113
+          }
+        ],
+        "earliest_s_no_slower_context": 73985,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 74113,
+        "integer_contexts_audited": 1048576,
+        "max_context": 1048576,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": false,
+        "package": "UCIe-S-declared",
+        "pair_policy": "block-rounded-causal",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 74070,
+            "start_context": 73985
+          },
+          {
+            "end_context": 1048576,
+            "start_context": 74113
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": false,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 3
+      },
+      "contract_name": "llama31-gqa-block-rounded-causal128-dense-bf16-separate-internal-local-fabric-v1",
+      "declared_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-block-rounded-causal128-dense-bf16-separate-internal-local-fabric-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 73984,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 74070,
+            "relation": "S-no-slower",
+            "start_context": 73985
+          },
+          {
+            "end_context": 74112,
+            "relation": "U-strictly-faster",
+            "start_context": 74071
+          },
+          {
+            "end_context": 131072,
+            "relation": "S-no-slower",
+            "start_context": 74113
+          }
+        ],
+        "earliest_s_no_slower_context": 73985,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 74113,
+        "integer_contexts_audited": 131072,
+        "max_context": 131072,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": false,
+        "package": "UCIe-S-declared",
+        "pair_policy": "block-rounded-causal",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 74070,
+            "start_context": 73985
+          },
+          {
+            "end_context": 131072,
+            "start_context": 74113
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": false,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 3
+      },
+      "package_accounting": "separate-internal-local-fabric",
+      "pair_policy": "block-rounded-causal",
+      "peak_basis": "dense-bf16"
+    },
+    {
+      "audited_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-block-rounded-causal128-sparse-bf16-sensitivity-shared-package-aggregate-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 449024,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 449150,
+            "relation": "S-no-slower",
+            "start_context": 449025
+          },
+          {
+            "end_context": 449152,
+            "relation": "U-strictly-faster",
+            "start_context": 449151
+          },
+          {
+            "end_context": 1048576,
+            "relation": "S-no-slower",
+            "start_context": 449153
+          }
+        ],
+        "earliest_s_no_slower_context": 449025,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 449153,
+        "integer_contexts_audited": 1048576,
+        "max_context": 1048576,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": false,
+        "package": "UCIe-S-declared",
+        "pair_policy": "block-rounded-causal",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 449150,
+            "start_context": 449025
+          },
+          {
+            "end_context": 1048576,
+            "start_context": 449153
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": false,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 3
+      },
+      "contract_name": "llama31-gqa-block-rounded-causal128-sparse-bf16-sensitivity-shared-package-aggregate-v1",
+      "declared_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-block-rounded-causal128-sparse-bf16-sensitivity-shared-package-aggregate-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 131072,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          }
+        ],
+        "earliest_s_no_slower_context": null,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": null,
+        "integer_contexts_audited": 131072,
+        "max_context": 131072,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "block-rounded-causal",
+        "s_no_slower_intervals": [],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 0
+      },
+      "package_accounting": "shared-package-aggregate",
+      "pair_policy": "block-rounded-causal",
+      "peak_basis": "sparse-bf16-sensitivity"
+    },
+    {
+      "audited_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-block-rounded-causal128-sparse-bf16-sensitivity-separate-internal-local-fabric-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 198912,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          },
+          {
+            "end_context": 198926,
+            "relation": "S-no-slower",
+            "start_context": 198913
+          },
+          {
+            "end_context": 199040,
+            "relation": "U-strictly-faster",
+            "start_context": 198927
+          },
+          {
+            "end_context": 1048576,
+            "relation": "S-no-slower",
+            "start_context": 199041
+          }
+        ],
+        "earliest_s_no_slower_context": 198913,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": 199041,
+        "integer_contexts_audited": 1048576,
+        "max_context": 1048576,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": false,
+        "package": "UCIe-S-declared",
+        "pair_policy": "block-rounded-causal",
+        "s_no_slower_intervals": [
+          {
+            "end_context": 198926,
+            "start_context": 198913
+          },
+          {
+            "end_context": 1048576,
+            "start_context": 199041
+          }
+        ],
+        "s_no_slower_is_monotone_nondecreasing": false,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 3
+      },
+      "contract_name": "llama31-gqa-block-rounded-causal128-sparse-bf16-sensitivity-separate-internal-local-fabric-v1",
+      "declared_context": {
+        "comparison": "best-S initiation interval <= best-U initiation interval",
+        "contract_name": "llama31-gqa-block-rounded-causal128-sparse-bf16-sensitivity-separate-internal-local-fabric-v1",
+        "dominance_intervals": [
+          {
+            "end_context": 131072,
+            "relation": "U-strictly-faster",
+            "start_context": 1
+          }
+        ],
+        "earliest_s_no_slower_context": null,
+        "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+        "first_sustained_s_no_slower_context": null,
+        "integer_contexts_audited": 131072,
+        "max_context": 131072,
+        "min_context": 1,
+        "monotonicity_established_by_complete_integer_audit": true,
+        "package": "UCIe-S-declared",
+        "pair_policy": "block-rounded-causal",
+        "s_no_slower_intervals": [],
+        "s_no_slower_is_monotone_nondecreasing": true,
+        "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+        "tie_rule": "an exact model tie is assigned to S-no-slower",
+        "transition_count": 0
+      },
+      "package_accounting": "separate-internal-local-fabric",
+      "pair_policy": "block-rounded-causal",
+      "peak_basis": "sparse-bf16-sensitivity"
+    }
+  ],
+  "contract_sensitivity_rows": 12,
+  "default_contract": {
+    "eta_universal": 0.8,
+    "execution": {
+      "causal_tile_tokens": 128,
+      "pair_policy": "block-rounded-causal"
+    },
+    "hybrid_capability_tax": 0.02,
+    "name": "llama31-gqa-block-rounded-causal128-dense-bf16-shared-package-aggregate-v1",
+    "operation_scope": "modeled tensor-matmul FLOPs",
+    "package_accounting": "shared-package-aggregate",
+    "peak": {
+      "basis": "dense-bf16"
+    },
+    "peak_interpretation": "5 PFLOP/s is the dense BF16 coordinate; 10 PFLOP/s is retained only as a structured-sparse sensitivity and is not silently applied to the dense named workload.",
+    "selected_peak_flops_s": 5000000000000000.0,
+    "typed_exclusions": [
+      "softmax",
+      "RoPE",
+      "RMSNorm",
+      "residual adds",
+      "SwiGLU elementwise activation",
+      "kernel launch",
+      "control",
+      "synchronization",
+      "ECC",
+      "additional nonideal utilization beyond declared mode factors"
+    ]
+  },
+  "flatattention_coordinates": {
+    "evidence": "Imported FlatAttention maxima from a different MHA many-PE platform; treated as swept portability hypotheses, not product guarantees.",
+    "flash_hbm_multiplier": 16.0,
+    "specialized_over_flash_speed_ratio": 4.1,
+    "specialized_utilization": 0.893
+  },
+  "flatattention_sweep_summary": {
+    "rows": 210,
+    "winner_counts": {
+      "S-heterogeneous-split": 90,
+      "U-universal-fused": 120
+    }
+  },
+  "internal_consistency_tests": {
+    "block_staircase_complete_dominance_intervals": "pass",
+    "dense_padded_fa_equals_ff_at_n_4d": "pass",
+    "executed_pair_policy_order": "pass",
+    "general_layout_assignment_and_counterexample": "pass",
+    "gqa_projection_shape_oracle": "pass",
+    "h_resource_conservation": "pass",
+    "hybrid_envelope_dominance": "pass",
+    "review4_compatibility_numbers": "pass",
+    "split_complete_allocation_sweep": "pass"
+  },
+  "layout_theorem": {
+    "general_statement": "retention is the maximum-weight perfect-assignment sum over source/target shard intersections",
+    "nested_corollary": "if C divides C' or C' divides C, moved fraction is 1-min(C,C')/max(C,C')",
+    "p12_c4_to_c6_moved_fraction": 0.5,
+    "p12_c4_to_c6_retained_fraction": 0.5
+  },
+  "mlp_modes": [
+    {
+      "d2d_multiplier": 1.0,
+      "evidence": "declared constructive dense-GEMM mode",
+      "fast_state_mib": 8.0,
+      "hbm_multiplier": 1.0,
+      "name": "2D-low-replication",
+      "utilization": 0.85
+    },
+    {
+      "d2d_multiplier": 0.5,
+      "evidence": "declared c=4 replication mode calibrated to prior certified GEMM frontier",
+      "fast_state_mib": 24.0,
+      "hbm_multiplier": 0.5,
+      "name": "2.5D-c4",
+      "utilization": 0.85
+    }
+  ],
+  "n16384_prefill_obligations": {
+    "activation_bytes": 134217728.0,
+    "attention_flops": 3590592659456.0,
+    "attention_hbm_base": 620756992.0,
+    "attention_pair_flops": 2216203124736.0,
+    "attention_projection_flops": 1374389534720.0,
+    "attention_weight_bytes": 83886080.0,
+    "bridge_bytes": 268435456.0,
+    "executed_attention_pairs": 135266304.0,
+    "internal_d2d_base": 268435456.0,
+    "mlp_flops": 5772436045824.0,
+    "mlp_hbm_base": 1157627904.0,
+    "mlp_weight_bytes": 352321536.0,
+    "semantic_attention_pairs": 134225920.0
+  },
+  "packages": [
+    {
+      "capability": "standard-package aggregate payload",
+      "energy_pj_bit": 0.5,
+      "evidence": "declared cluster calibrated to UCIe rate classes",
+      "name": "UCIe-S-declared",
+      "payload_bytes_s": 64000000000.0
+    },
+    {
+      "capability": "advanced-package aggregate payload",
+      "energy_pj_bit": 0.25,
+      "evidence": "declared cluster calibrated to UCIe rate classes",
+      "name": "UCIe-A32-declared",
+      "payload_bytes_s": 256000000000.0
+    },
+    {
+      "capability": "advanced-package aggregate payload",
+      "energy_pj_bit": 0.25,
+      "evidence": "declared cluster calibrated to the UCIe 64-GT/s class",
+      "name": "UCIe-A64-declared",
+      "payload_bytes_s": 512000000000.0
+    },
+    {
+      "capability": "hybrid-bonded vertical aggregate payload",
+      "energy_pj_bit": 0.05,
+      "evidence": "declared sensitivity point; not an official UCIe throughput guarantee",
+      "name": "3D-vertical-declared",
+      "payload_bytes_s": 4000000000000.0
+    }
+  ],
+  "schema_version": "northstar-vNext4.1-model-v3.1",
+  "system": {
+    "compute_chiplets": 32,
+    "dense_bf16_flops_s": 5000000000000000.0,
+    "effective_hbm_bytes_s": 8000000000000.0,
+    "fast_state_mib_per_chiplet": 32.0,
+    "hbm_stacks": 8,
+    "local_fabric_bytes_s": 4000000000000.0,
+    "raw_hbm_bytes_s": 9600000000000.0,
+    "sparse_bf16_flops_s": 1e+16
+  },
+  "ucie_s_dominance_within_audited_context": {
+    "comparison": "best-S initiation interval <= best-U initiation interval",
+    "contract_name": "llama31-gqa-block-rounded-causal128-dense-bf16-shared-package-aggregate-v1",
+    "dominance_intervals": [
+      {
+        "end_context": 198912,
+        "relation": "U-strictly-faster",
+        "start_context": 1
+      },
+      {
+        "end_context": 198926,
+        "relation": "S-no-slower",
+        "start_context": 198913
+      },
+      {
+        "end_context": 199040,
+        "relation": "U-strictly-faster",
+        "start_context": 198927
+      },
+      {
+        "end_context": 1048576,
+        "relation": "S-no-slower",
+        "start_context": 199041
+      }
+    ],
+    "earliest_s_no_slower_context": 198913,
+    "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+    "first_sustained_s_no_slower_context": 199041,
+    "integer_contexts_audited": 1048576,
+    "max_context": 1048576,
+    "min_context": 1,
+    "monotonicity_established_by_complete_integer_audit": false,
+    "package": "UCIe-S-declared",
+    "pair_policy": "block-rounded-causal",
+    "s_no_slower_intervals": [
+      {
+        "end_context": 198926,
+        "start_context": 198913
+      },
+      {
+        "end_context": 1048576,
+        "start_context": 199041
+      }
+    ],
+    "s_no_slower_is_monotone_nondecreasing": false,
+    "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+    "tie_rule": "an exact model tie is assigned to S-no-slower",
+    "transition_count": 3
+  },
+  "ucie_s_dominance_within_declared_context": {
+    "comparison": "best-S initiation interval <= best-U initiation interval",
+    "contract_name": "llama31-gqa-block-rounded-causal128-dense-bf16-shared-package-aggregate-v1",
+    "dominance_intervals": [
+      {
+        "end_context": 131072,
+        "relation": "U-strictly-faster",
+        "start_context": 1
+      }
+    ],
+    "earliest_s_no_slower_context": null,
+    "enumeration_method": "complete float64 evaluation at every integer context; vectorized in bounded chunks and run-length encoded",
+    "first_sustained_s_no_slower_context": null,
+    "integer_contexts_audited": 131072,
+    "max_context": 131072,
+    "min_context": 1,
+    "monotonicity_established_by_complete_integer_audit": true,
+    "package": "UCIe-S-declared",
+    "pair_policy": "block-rounded-causal",
+    "s_no_slower_intervals": [],
+    "s_no_slower_is_monotone_nondecreasing": true,
+    "sustained_scope": "S remains no slower through max_context; no claim beyond the audited range",
+    "tie_rule": "an exact model tie is assigned to S-no-slower",
+    "transition_count": 0
+  },
+  "universal_specialization_eta_boundary_a64_n16384": 0.8812003968253965,
+  "unresolved_modeling_choices": [
+    "Actual causal executed-pair count requires an implementation trace; dense-padded, ideal-causal, and block-rounded results are all emitted.",
+    "The shared aggregate package-fabric contract is conservative; a separate internal-local-fabric comparator is emitted rather than hidden.",
+    "FlatAttention coordinates remain imported MHA-platform maxima and are swept as portability hypotheses.",
+    "The 5-PF dense peak is a ceiling, not an achieved end-to-end rate; auxiliary operations and synchronization remain typed exclusions.",
+    "The continuous-resource H chunk envelope is excluded from class competition until an integer/common-allocation stream is declared; the sequential conserved witness is the registered H schedule.",
+    "Usable fast-state derating and fragmentation require calibration; capacity-wall witnesses have zero certified slack.",
+    "The X hybrid capability tax is declared rather than measured.",
+    "Routed contention, buffers, clocks, ECC, energy, area, thermal, yield, and cost are outside the current algebraic certificate.",
+    "Memory-centric and vertical delivered capabilities remain declared sensitivity coordinates."
+  ],
+  "workload": {
+    "batch": 1,
+    "bytes_per_element": 2,
+    "d": 4096,
+    "d_ff": 14336,
+    "heads": 32,
+    "kv_heads": 8,
+    "layers": 32,
+    "max_context": 131072,
+    "name": "Llama-3.1-8B-class-GQA"
+  }
+}

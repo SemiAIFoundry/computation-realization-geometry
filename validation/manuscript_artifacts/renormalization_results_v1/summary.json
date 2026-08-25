@@ -1,0 +1,305 @@
+{
+  "all_self_tests_passed": true,
+  "autonomous": {
+    "harmonic_reduced_envelope_tail_span": 4.0730099165191684e-16,
+    "matrix": [
+      [
+        2.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "max_final_hilbert_distance": 4.440892098500625e-16,
+    "max_final_ratio_error": 4.440892098500626e-16,
+    "perron_direction": [
+      0.6180339887498949,
+      0.3819660112501051
+    ],
+    "perron_root": 2.618033988749895,
+    "rent_index_p": 1.3884838272612348,
+    "steps": 48
+  },
+  "caps": {
+    "crossover_scales": [
+      100.0,
+      10000.0,
+      1000000.0,
+      100000000.0,
+      10000000000.0
+    ],
+    "hard_limit": "min(x^p,1)",
+    "interior": {
+      "alpha": 0.7,
+      "form": "g^p * log(e+g)^alpha",
+      "p": 0.62
+    },
+    "max_abs_error_by_response": {
+      "hard": [
+        0.08888981162497883,
+        0.046366804812962625,
+        0.030624195998551318,
+        0.02285805109692396,
+        0.01823497622208703
+      ],
+      "soft": [
+        0.05728709257622894,
+        0.029467493252517823,
+        0.019139772438858837,
+        0.014169161496451449,
+        0.01124897752568002
+      ]
+    },
+    "soft_limit": "x^p/(1+x^p)"
+  },
+  "deterministic": true,
+  "hierarchy_scale_factor_b": 2.0,
+  "negative_controls": {
+    "bounded_no_exponent": {
+      "block_end_exponents": [
+        1.0,
+        1.8999999999999981,
+        1.098901098901101,
+        1.8999999999999186
+      ],
+      "block_lengths": [
+        4,
+        36,
+        324,
+        2916
+      ],
+      "last_endpoint_separation": 0.8010989010988177
+    },
+    "no_projective_mixing": {
+      "matrix": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "retained_first_mode_shares": [
+        0.9,
+        0.1
+      ]
+    },
+    "nonnegligible_forcing": {
+      "final_global_exponent": 1.576629167387823,
+      "forcing_base": 3.0,
+      "forcing_dominated_index": 1.5849625007211563,
+      "homogeneous_index": 1.0,
+      "homogeneous_multiplier": 2.0
+    },
+    "quasiperiodic": {
+      "final_global_exponent": 0.7997541375890859,
+      "gamma": 0.35,
+      "irrational_phase_increment": 1.4142135623730951,
+      "p": 0.8,
+      "phase_fit_rmse_periods_1_to_8": {
+        "1": 0.46400600708042516,
+        "2": 0.4640060040958123,
+        "3": 0.4639904638223429,
+        "4": 0.4640039792693588,
+        "5": 0.46400334437092117,
+        "6": 0.4639642991441496,
+        "7": 0.4639652074413301,
+        "8": 0.4640036941908582
+      }
+    }
+  },
+  "output_contract": {
+    "csv_files": [
+      "autonomous_orbits.csv",
+      "periodic_orbits.csv",
+      "cap_collapse.csv",
+      "negative_controls.csv"
+    ],
+    "figures": [
+      "01_autonomous_projective_attractor.png",
+      "02_periodic_perron_floquet_cycle.png",
+      "03_boundary_cap_collapse.png",
+      "04_negative_controls.png"
+    ]
+  },
+  "periodic": {
+    "A0": [
+      [
+        2.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "A1": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        1.0,
+        3.0
+      ]
+    ],
+    "b_to_p": 2.8058837014757794,
+    "max_final_hilbert_distance": 4.440892098500625e-16,
+    "max_final_ratio_error": 8.881784197001252e-16,
+    "max_reduced_amplitude_tail_span": 8.60850461287548e-15,
+    "monodromy": [
+      [
+        4.0,
+        3.0
+      ],
+      [
+        5.0,
+        4.0
+      ]
+    ],
+    "monodromy_perron_root": 7.872983346207417,
+    "phase_directions": [
+      [
+        0.43649167310370834,
+        0.5635083268962916
+      ],
+      [
+        0.5895738076846547,
+        0.41042619231534533
+      ]
+    ],
+    "phase_gain_product_error": 0.0,
+    "phase_gains": [
+      2.436491673103708,
+      3.2312785769460364
+    ],
+    "rent_index_p": 1.488455213241042
+  },
+  "schema_version": "renormalization-validation-v1",
+  "self_tests": [
+    {
+      "criterion": "max final Hilbert distance < 1e-12",
+      "name": "autonomous_projective_convergence",
+      "passed": true,
+      "value": 4.440892098500625e-16
+    },
+    {
+      "criterion": "max final adjacent-ratio error < 1e-12",
+      "name": "autonomous_ratio_convergence",
+      "passed": true,
+      "value": 4.440892098500626e-16
+    },
+    {
+      "criterion": "Y_k/[rho(A)^k(k+1)] has relative tail span < 1e-8",
+      "name": "harmonic_slow_envelope",
+      "passed": true,
+      "value": 4.0730099165191684e-16
+    },
+    {
+      "criterion": "|c0*c1-rho(M)| < 1e-12",
+      "name": "periodic_monodromy_identity",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "criterion": "max late Hilbert distance to phase cycle < 1e-12",
+      "name": "periodic_projective_cycle",
+      "passed": true,
+      "value": 4.440892098500625e-16
+    },
+    {
+      "criterion": "max late phase-ratio error < 1e-12",
+      "name": "periodic_phase_ratio_cycle",
+      "passed": true,
+      "value": 8.881784197001252e-16
+    },
+    {
+      "criterion": "c0, c1, and b^p are materially distinct",
+      "name": "periodic_nonconstant_scalar_phase",
+      "passed": true,
+      "value": 0.3693920283720713
+    },
+    {
+      "criterion": "max relative tail span of phase-reduced amplitude < 1e-10",
+      "name": "periodic_reduced_amplitude_convergence",
+      "passed": true,
+      "value": 8.60850461287548e-15
+    },
+    {
+      "criterion": "maximum crossover error strictly decreases with g_star",
+      "name": "hard_cap_error_decreases",
+      "passed": true,
+      "value": [
+        0.08888981162497883,
+        0.046366804812962625,
+        0.030624195998551318,
+        0.02285805109692396,
+        0.01823497622208703
+      ]
+    },
+    {
+      "criterion": "maximum normalized crossover error at g_star=1e+10 < 0.02",
+      "name": "hard_cap_largest_scale_accuracy",
+      "passed": true,
+      "value": 0.01823497622208703
+    },
+    {
+      "criterion": "maximum crossover error strictly decreases with g_star",
+      "name": "soft_cap_error_decreases",
+      "passed": true,
+      "value": [
+        0.05728709257622894,
+        0.029467493252517823,
+        0.019139772438858837,
+        0.014169161496451449,
+        0.01124897752568002
+      ]
+    },
+    {
+      "criterion": "maximum normalized crossover error at g_star=1e+10 < 0.02",
+      "name": "soft_cap_largest_scale_accuracy",
+      "passed": true,
+      "value": 0.01124897752568002
+    },
+    {
+      "criterion": "hard and soft registered crossover limits differ by 0.5 at x=1",
+      "name": "cap_response_nonuniversality",
+      "passed": true,
+      "value": 0.5
+    },
+    {
+      "criterion": "last two dominating-block endpoint exponents differ by > 0.70",
+      "name": "bounded_distortion_no_exponent",
+      "passed": true,
+      "value": 0.8010989010988177
+    },
+    {
+      "criterion": "best phase-constant fit over periods 1..8 has tail RMSE > 0.20",
+      "name": "quasiperiodic_no_finite_phase",
+      "passed": true,
+      "value": 0.4639642991441496
+    },
+    {
+      "criterion": "|global exponent-p| < 1e-3",
+      "name": "quasiperiodic_global_exponent_exists",
+      "passed": true,
+      "value": 0.7997541375890859
+    },
+    {
+      "criterion": "final exponent is within 0.02 of log_2(3), not 1",
+      "name": "nonnegligible_forcing_changes_exponent",
+      "passed": true,
+      "value": 1.576629167387823
+    },
+    {
+      "criterion": "identity cocycle preserves an 0.8 difference in first-mode share",
+      "name": "no_mixing_retains_initial_direction",
+      "passed": true,
+      "value": 0.8
+    }
+  ]
+}

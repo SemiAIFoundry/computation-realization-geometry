@@ -1,0 +1,87 @@
+{
+  "technology_library": {
+    "UCIe-S-32": {
+      "bw_GBs": 64.0,
+      "energy_pJ_bit": 0.5,
+      "source": "UCIe 2.0 target, standard package, one width-16 cluster"
+    },
+    "UCIe-A-32": {
+      "bw_GBs": 256.0,
+      "energy_pJ_bit": 0.25,
+      "source": "UCIe 2.0 target, advanced package, one width-64 cluster"
+    },
+    "UCIe-A-64": {
+      "bw_GBs": 512.0,
+      "energy_pJ_bit": 0.25,
+      "source": "UCIe 3.0 rate; energy held at UCIe 2.0 public target as a declared proxy"
+    }
+  },
+  "gemm": {
+    "P": 64,
+    "word_bytes": 2,
+    "c_values": [
+      1,
+      2,
+      4
+    ],
+    "memory_thresholds": [
+      {
+        "SRAM_MiB": 32,
+        "c": 1,
+        "n_max": 18918.613620805656
+      },
+      {
+        "SRAM_MiB": 32,
+        "c": 2,
+        "n_max": 13377.479981919863
+      },
+      {
+        "SRAM_MiB": 32,
+        "c": 4,
+        "n_max": 9459.306810402828
+      },
+      {
+        "SRAM_MiB": 96,
+        "c": 1,
+        "n_max": 32768.0
+      },
+      {
+        "SRAM_MiB": 96,
+        "c": 2,
+        "n_max": 23170.47500592079
+      },
+      {
+        "SRAM_MiB": 96,
+        "c": 4,
+        "n_max": 16384.0
+      }
+    ],
+    "recommendation_n8192_32MiB": "c=4 is the largest feasible and Pareto-dominant member of the declared 2.5D family"
+  },
+  "attention": {
+    "published_signatures": {
+      "standard": {
+        "GFLOP": 66.6,
+        "HBM_GB": 40.3,
+        "runtime_ms": 41.7
+      },
+      "flash": {
+        "GFLOP": 75.2,
+        "HBM_GB": 4.4,
+        "runtime_ms": 7.3
+      }
+    },
+    "delta_GFLOP": 8.600000000000009,
+    "delta_HBM_GB": 35.9,
+    "compute_to_bandwidth_break_even_FLOP_per_byte": 0.23955431754874676,
+    "measured_speedup": 5.712328767123288,
+    "SRAM_crossover_elements_d_squared": {
+      "64": 4096,
+      "128": 16384
+    },
+    "SRAM_crossover_KiB_FP16": {
+      "64": 8.0,
+      "128": 32.0
+    }
+  }
+}

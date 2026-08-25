@@ -1,0 +1,53 @@
+{
+  "experiment_id": "crg.retention.adversarial.v2",
+  "frozen_date": "2026-08-22",
+  "purpose": "Adversarial evaluation of retention policies with disjoint construction and evaluation ledgers, stronger exhaustive-DSE baselines, out-of-distribution changes, controlled perturbation magnitudes, and explicit capability-change reopening.",
+  "legal_family": "Five nonvertical legal realizations from the public CRG transformer-microblock reference registry; the vertical realization is introduced only in the capability-change track.",
+  "workloads": [
+    {"id": "W0", "sequence_length": 48, "d_model": 48, "d_ff": 96},
+    {"id": "W1", "sequence_length": 64, "d_model": 64, "d_ff": 128},
+    {"id": "W2", "sequence_length": 80, "d_model": 80, "d_ff": 160},
+    {"id": "W3", "sequence_length": 96, "d_model": 64, "d_ff": 192}
+  ],
+  "scenario_counts_per_workload": {
+    "construction": 512,
+    "held_out_in_distribution": 1024,
+    "technology_ood": 1024,
+    "objective_ood": 1024,
+    "joint_ood": 1024,
+    "radial_directions": 256,
+    "capability_change": 256
+  },
+  "radial_magnitudes": [0.0, 0.25, 0.5, 1.0, 1.5, 2.0, 3.0],
+  "seeds": {
+    "construction": 2026082201,
+    "held_out_in_distribution": 2026082202,
+    "technology_ood": 2026082203,
+    "objective_ood": 2026082204,
+    "joint_ood": 2026082205,
+    "capability_change": 2026082206,
+    "radial": 2026082207
+  },
+  "construction_scope": {
+    "technology": "nonvertical moderate-range compute, HBM, package service, and energy coordinates",
+    "objective": "latency/energy/area simplex; thermal and reliability weights fixed to zero"
+  },
+  "policies": [
+    "initial winner", "initial full PPA Pareto set",
+    "construction-scenario robust Pareto union",
+    "exact minimax-regret DSE at matched budget",
+    "exact mean-regret DSE at matched budget",
+    "response-diversity DSE at matched budget",
+    "CRG construction-ledger argmin cover",
+    "CRG universal-monotone retention",
+    "held-out oracle argmin cover (analysis only)"
+  ],
+  "primary_metrics": [
+    "winner miss rate", "mean, median, p95, and maximum relative regret",
+    "retained count and serialized metadata bytes",
+    "regret versus controlled perturbation magnitude",
+    "capability-change detection and post-reopen regret"
+  ],
+  "comparison_rule": "All implementable policies are constructed only from the frozen construction ledger. Evaluation suites use disjoint seeds. The oracle is analysis-only.",
+  "precision": "Exact finite-registry enumeration; relative tie tolerance 1e-10."
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "name": "multiplier",
+    "hierarchy": "RCM-fixed",
+    "classes": [
+      "2-pin",
+      "3-8 pin",
+      "9-32 pin",
+      ">32 pin"
+    ],
+    "mode_exponents": {
+      "2-pin": 0.931000552343878,
+      "3-8 pin": 0.9021370378521686,
+      "9-32 pin": 0.5083602355662789,
+      ">32 pin": 0.23051609678155738
+    },
+    "levels": 9,
+    "profile_relative_rmse": 0.13487274396352178,
+    "slope_rmse_power_mode": 0.26460153866734937,
+    "curvature_rmse_power_mode": 0.29487858359003555,
+    "slope_rmse_exact_mode_identity": 0.009347515657823546,
+    "curvature_rmse_exact_mode_identity": 0.0497317087275462,
+    "max_decomposition_residual": 0.0
+  },
+  {
+    "name": "multiplier",
+    "hierarchy": "recursive-RCM",
+    "classes": [
+      "2-pin",
+      "3-8 pin",
+      "9-32 pin",
+      ">32 pin"
+    ],
+    "mode_exponents": {
+      "2-pin": 0.8906968983881958,
+      "3-8 pin": 0.7541659203268615,
+      "9-32 pin": 0.6959552003839161,
+      ">32 pin": 0.19228236480496375
+    },
+    "levels": 9,
+    "profile_relative_rmse": 0.04780595257291653,
+    "slope_rmse_power_mode": 0.055496012465962724,
+    "curvature_rmse_power_mode": 0.10204926117052036,
+    "slope_rmse_exact_mode_identity": 0.0031817649966683413,
+    "curvature_rmse_exact_mode_identity": 0.0087561085748281,
+    "max_decomposition_residual": 0.0
+  }
+]

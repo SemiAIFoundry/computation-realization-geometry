@@ -1,0 +1,771 @@
+{
+  "experiment_id": "crg.retention.adversarial.v2",
+  "preregistration_sha256": "e4556788b421cb9a67eec61b60d6dd6aecb5f9731e51ab40a3a13f8739f0f75f",
+  "analysis_mode": "frozen-ledger reanalysis",
+  "total_scenarios": 26624,
+  "workloads": [
+    {
+      "workload_id": "W0",
+      "sequence_length": 48,
+      "d_model": 48,
+      "d_ff": 96,
+      "construction_argmin_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r4.replicated_split_recompute"
+      ],
+      "crg_ledger_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r4.replicated_split_recompute"
+      ],
+      "crg_ledger_count": 4,
+      "minimax_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r4.replicated_split_recompute"
+      ],
+      "same_crg_and_minimax": true,
+      "universal_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r3.split_recompute",
+        "r4.replicated_split_recompute"
+      ],
+      "robust_pareto_union_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r3.split_recompute",
+        "r4.replicated_split_recompute"
+      ],
+      "held_out_oracle_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r3.split_recompute",
+        "r4.replicated_split_recompute"
+      ]
+    },
+    {
+      "workload_id": "W1",
+      "sequence_length": 64,
+      "d_model": 64,
+      "d_ff": 128,
+      "construction_argmin_ids": [
+        "r0.fused_materialize",
+        "r2.split_materialize",
+        "r4.replicated_split_recompute"
+      ],
+      "crg_ledger_ids": [
+        "r0.fused_materialize",
+        "r2.split_materialize",
+        "r4.replicated_split_recompute"
+      ],
+      "crg_ledger_count": 3,
+      "minimax_ids": [
+        "r0.fused_materialize",
+        "r2.split_materialize",
+        "r4.replicated_split_recompute"
+      ],
+      "same_crg_and_minimax": true,
+      "universal_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r3.split_recompute",
+        "r4.replicated_split_recompute"
+      ],
+      "robust_pareto_union_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r3.split_recompute",
+        "r4.replicated_split_recompute"
+      ],
+      "held_out_oracle_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r4.replicated_split_recompute"
+      ]
+    },
+    {
+      "workload_id": "W2",
+      "sequence_length": 80,
+      "d_model": 80,
+      "d_ff": 160,
+      "construction_argmin_ids": [
+        "r0.fused_materialize",
+        "r2.split_materialize"
+      ],
+      "crg_ledger_ids": [
+        "r0.fused_materialize",
+        "r2.split_materialize"
+      ],
+      "crg_ledger_count": 2,
+      "minimax_ids": [
+        "r0.fused_materialize",
+        "r2.split_materialize"
+      ],
+      "same_crg_and_minimax": true,
+      "universal_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r3.split_recompute",
+        "r4.replicated_split_recompute"
+      ],
+      "robust_pareto_union_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r4.replicated_split_recompute"
+      ],
+      "held_out_oracle_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r3.split_recompute",
+        "r4.replicated_split_recompute"
+      ]
+    },
+    {
+      "workload_id": "W3",
+      "sequence_length": 96,
+      "d_model": 64,
+      "d_ff": 192,
+      "construction_argmin_ids": [
+        "r0.fused_materialize",
+        "r2.split_materialize"
+      ],
+      "crg_ledger_ids": [
+        "r0.fused_materialize",
+        "r2.split_materialize"
+      ],
+      "crg_ledger_count": 2,
+      "minimax_ids": [
+        "r0.fused_materialize",
+        "r2.split_materialize"
+      ],
+      "same_crg_and_minimax": true,
+      "universal_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r3.split_recompute",
+        "r4.replicated_split_recompute"
+      ],
+      "robust_pareto_union_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r3.split_recompute",
+        "r4.replicated_split_recompute"
+      ],
+      "held_out_oracle_ids": [
+        "r0.fused_materialize",
+        "r1.fused_recompute",
+        "r2.split_materialize",
+        "r3.split_recompute",
+        "r4.replicated_split_recompute"
+      ]
+    }
+  ],
+  "aggregate_policy_summary": [
+    {
+      "suite": "construction",
+      "policy": "Initial winner",
+      "retained_min": 1,
+      "retained_max": 1,
+      "winner_miss_rate": 0.49267578125,
+      "mean_relative_regret": 0.7237907811578962,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 5.2360457408381444,
+      "max_relative_regret": 14.433246399911898,
+      "scenarios": 2048
+    },
+    {
+      "suite": "construction",
+      "policy": "Initial full PPA Pareto",
+      "retained_min": 2,
+      "retained_max": 3,
+      "winner_miss_rate": 0.27001953125,
+      "mean_relative_regret": 0.031458843367363785,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.12614694358552309,
+      "max_relative_regret": 0.15712607399698,
+      "scenarios": 2048
+    },
+    {
+      "suite": "construction",
+      "policy": "Construction robust-Pareto union",
+      "retained_min": 4,
+      "retained_max": 5,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 2048
+    },
+    {
+      "suite": "construction",
+      "policy": "Robust-DSE minimax (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 2048
+    },
+    {
+      "suite": "construction",
+      "policy": "Robust-DSE mean-regret (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 2048
+    },
+    {
+      "suite": "construction",
+      "policy": "Response-diversity DSE (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.43701171875,
+      "mean_relative_regret": 0.05191874060718789,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.12679541211950884,
+      "max_relative_regret": 0.15666957709044688,
+      "scenarios": 2048
+    },
+    {
+      "suite": "construction",
+      "policy": "CRG construction-ledger cover",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 2048
+    },
+    {
+      "suite": "construction",
+      "policy": "CRG universal monotone",
+      "retained_min": 5,
+      "retained_max": 5,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 2048
+    },
+    {
+      "suite": "held_out_in_distribution",
+      "policy": "Initial winner",
+      "retained_min": 1,
+      "retained_max": 1,
+      "winner_miss_rate": 0.484130859375,
+      "mean_relative_regret": 0.7188996133036342,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 5.089150790198605,
+      "max_relative_regret": 17.79154092831871,
+      "scenarios": 4096
+    },
+    {
+      "suite": "held_out_in_distribution",
+      "policy": "Initial full PPA Pareto",
+      "retained_min": 2,
+      "retained_max": 3,
+      "winner_miss_rate": 0.260498046875,
+      "mean_relative_regret": 0.030087855364113028,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.12606263188252054,
+      "max_relative_regret": 0.15474818463461187,
+      "scenarios": 4096
+    },
+    {
+      "suite": "held_out_in_distribution",
+      "policy": "Construction robust-Pareto union",
+      "retained_min": 4,
+      "retained_max": 5,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 4096
+    },
+    {
+      "suite": "held_out_in_distribution",
+      "policy": "Robust-DSE minimax (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 4096
+    },
+    {
+      "suite": "held_out_in_distribution",
+      "policy": "Robust-DSE mean-regret (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 4096
+    },
+    {
+      "suite": "held_out_in_distribution",
+      "policy": "Response-diversity DSE (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.438232421875,
+      "mean_relative_regret": 0.052196299077492805,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.12665956904350695,
+      "max_relative_regret": 0.15708191667667892,
+      "scenarios": 4096
+    },
+    {
+      "suite": "held_out_in_distribution",
+      "policy": "CRG construction-ledger cover",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 4096
+    },
+    {
+      "suite": "held_out_in_distribution",
+      "policy": "CRG universal monotone",
+      "retained_min": 5,
+      "retained_max": 5,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 4096
+    },
+    {
+      "suite": "technology_ood",
+      "policy": "Initial winner",
+      "retained_min": 1,
+      "retained_max": 1,
+      "winner_miss_rate": 0.596923828125,
+      "mean_relative_regret": 5.6756502415077685,
+      "median_relative_regret": 0.10218477380938434,
+      "p95_relative_regret": 34.21473916520826,
+      "max_relative_regret": 279.42883357945584,
+      "scenarios": 4096
+    },
+    {
+      "suite": "technology_ood",
+      "policy": "Initial full PPA Pareto",
+      "retained_min": 2,
+      "retained_max": 3,
+      "winner_miss_rate": 0.29736328125,
+      "mean_relative_regret": 0.02856828111123125,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.12597403991947037,
+      "max_relative_regret": 0.15583402769320778,
+      "scenarios": 4096
+    },
+    {
+      "suite": "technology_ood",
+      "policy": "Construction robust-Pareto union",
+      "retained_min": 4,
+      "retained_max": 5,
+      "winner_miss_rate": 0.000244140625,
+      "mean_relative_regret": 3.619721929209259e-08,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.00014826381022041126,
+      "scenarios": 4096
+    },
+    {
+      "suite": "technology_ood",
+      "policy": "Robust-DSE minimax (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.10986328125,
+      "mean_relative_regret": 0.008995041089013877,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.09027886150116055,
+      "max_relative_regret": 0.1706156351898779,
+      "scenarios": 4096
+    },
+    {
+      "suite": "technology_ood",
+      "policy": "Robust-DSE mean-regret (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.10986328125,
+      "mean_relative_regret": 0.008995041089013877,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.09027886150116055,
+      "max_relative_regret": 0.1706156351898779,
+      "scenarios": 4096
+    },
+    {
+      "suite": "technology_ood",
+      "policy": "Response-diversity DSE (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.446044921875,
+      "mean_relative_regret": 0.047893017334893616,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.12685911453777612,
+      "max_relative_regret": 0.15927880062737557,
+      "scenarios": 4096
+    },
+    {
+      "suite": "technology_ood",
+      "policy": "CRG construction-ledger cover",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.10986328125,
+      "mean_relative_regret": 0.008995041089013877,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.09027886150116055,
+      "max_relative_regret": 0.1706156351898779,
+      "scenarios": 4096
+    },
+    {
+      "suite": "technology_ood",
+      "policy": "CRG universal monotone",
+      "retained_min": 5,
+      "retained_max": 5,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 4096
+    },
+    {
+      "suite": "objective_ood",
+      "policy": "Initial winner",
+      "retained_min": 1,
+      "retained_max": 1,
+      "winner_miss_rate": 0.4873046875,
+      "mean_relative_regret": 0.660408163119891,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 4.795167965786222,
+      "max_relative_regret": 14.826018267047822,
+      "scenarios": 4096
+    },
+    {
+      "suite": "objective_ood",
+      "policy": "Initial full PPA Pareto",
+      "retained_min": 2,
+      "retained_max": 3,
+      "winner_miss_rate": 0.257080078125,
+      "mean_relative_regret": 0.024540985457231823,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.12217922529877168,
+      "max_relative_regret": 0.150438775202472,
+      "scenarios": 4096
+    },
+    {
+      "suite": "objective_ood",
+      "policy": "Construction robust-Pareto union",
+      "retained_min": 4,
+      "retained_max": 5,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 4096
+    },
+    {
+      "suite": "objective_ood",
+      "policy": "Robust-DSE minimax (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.00048828125,
+      "mean_relative_regret": 8.108883621746507e-08,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.00022767270887573347,
+      "scenarios": 4096
+    },
+    {
+      "suite": "objective_ood",
+      "policy": "Robust-DSE mean-regret (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.00048828125,
+      "mean_relative_regret": 8.108883621746507e-08,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.00022767270887573347,
+      "scenarios": 4096
+    },
+    {
+      "suite": "objective_ood",
+      "policy": "Response-diversity DSE (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.42333984375,
+      "mean_relative_regret": 0.04354138156844222,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.12477492856303739,
+      "max_relative_regret": 0.149287450646821,
+      "scenarios": 4096
+    },
+    {
+      "suite": "objective_ood",
+      "policy": "CRG construction-ledger cover",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.00048828125,
+      "mean_relative_regret": 8.108883621746507e-08,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.00022767270887573347,
+      "scenarios": 4096
+    },
+    {
+      "suite": "objective_ood",
+      "policy": "CRG universal monotone",
+      "retained_min": 5,
+      "retained_max": 5,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 4096
+    },
+    {
+      "suite": "joint_ood",
+      "policy": "Initial winner",
+      "retained_min": 1,
+      "retained_max": 1,
+      "winner_miss_rate": 0.580322265625,
+      "mean_relative_regret": 4.193986082458292,
+      "median_relative_regret": 0.06230845610866508,
+      "p95_relative_regret": 24.406919863828165,
+      "max_relative_regret": 221.70081068319763,
+      "scenarios": 4096
+    },
+    {
+      "suite": "joint_ood",
+      "policy": "Initial full PPA Pareto",
+      "retained_min": 2,
+      "retained_max": 3,
+      "winner_miss_rate": 0.279052734375,
+      "mean_relative_regret": 0.023406362552395202,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.12225368506384468,
+      "max_relative_regret": 0.14496257315169303,
+      "scenarios": 4096
+    },
+    {
+      "suite": "joint_ood",
+      "policy": "Construction robust-Pareto union",
+      "retained_min": 4,
+      "retained_max": 5,
+      "winner_miss_rate": 0.000244140625,
+      "mean_relative_regret": 6.049063754422987e-08,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.00024776965138116554,
+      "scenarios": 4096
+    },
+    {
+      "suite": "joint_ood",
+      "policy": "Robust-DSE minimax (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.1015625,
+      "mean_relative_regret": 0.007478652453612801,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.07751704424639455,
+      "max_relative_regret": 0.1676309032887689,
+      "scenarios": 4096
+    },
+    {
+      "suite": "joint_ood",
+      "policy": "Robust-DSE mean-regret (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.1015625,
+      "mean_relative_regret": 0.007478652453612801,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.07751704424639455,
+      "max_relative_regret": 0.1676309032887689,
+      "scenarios": 4096
+    },
+    {
+      "suite": "joint_ood",
+      "policy": "Response-diversity DSE (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.4326171875,
+      "mean_relative_regret": 0.041866022627338635,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.12530809588676528,
+      "max_relative_regret": 0.15120593329560372,
+      "scenarios": 4096
+    },
+    {
+      "suite": "joint_ood",
+      "policy": "CRG construction-ledger cover",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.1015625,
+      "mean_relative_regret": 0.007478652453612801,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.07751704424639455,
+      "max_relative_regret": 0.1676309032887689,
+      "scenarios": 4096
+    },
+    {
+      "suite": "joint_ood",
+      "policy": "CRG universal monotone",
+      "retained_min": 5,
+      "retained_max": 5,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 4096
+    },
+    {
+      "suite": "radial_perturbation",
+      "policy": "Initial winner",
+      "retained_min": 1,
+      "retained_max": 1,
+      "winner_miss_rate": 0.5206473214285714,
+      "mean_relative_regret": 17.892830744163327,
+      "median_relative_regret": 0.039711543421204504,
+      "p95_relative_regret": 7.429475793994571,
+      "max_relative_regret": 8589.720616084562,
+      "scenarios": 7168
+    },
+    {
+      "suite": "radial_perturbation",
+      "policy": "Initial full PPA Pareto",
+      "retained_min": 2,
+      "retained_max": 3,
+      "winner_miss_rate": 0.3316127232142857,
+      "mean_relative_regret": 0.034523450613321974,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.12464672251820047,
+      "max_relative_regret": 0.15682201369069207,
+      "scenarios": 7168
+    },
+    {
+      "suite": "radial_perturbation",
+      "policy": "Construction robust-Pareto union",
+      "retained_min": 4,
+      "retained_max": 5,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 7168
+    },
+    {
+      "suite": "radial_perturbation",
+      "policy": "Robust-DSE minimax (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.023856026785714284,
+      "mean_relative_regret": 0.0019106796791650952,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.16453349859638494,
+      "scenarios": 7168
+    },
+    {
+      "suite": "radial_perturbation",
+      "policy": "Robust-DSE mean-regret (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.023856026785714284,
+      "mean_relative_regret": 0.0019106796791650952,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.16453349859638494,
+      "scenarios": 7168
+    },
+    {
+      "suite": "radial_perturbation",
+      "policy": "Response-diversity DSE (matched budget)",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.5260881696428571,
+      "mean_relative_regret": 0.06050320593342242,
+      "median_relative_regret": 0.05721432363049607,
+      "p95_relative_regret": 0.1255752879720802,
+      "max_relative_regret": 0.15682201369069207,
+      "scenarios": 7168
+    },
+    {
+      "suite": "radial_perturbation",
+      "policy": "CRG construction-ledger cover",
+      "retained_min": 2,
+      "retained_max": 4,
+      "winner_miss_rate": 0.023856026785714284,
+      "mean_relative_regret": 0.0019106796791650952,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.16453349859638494,
+      "scenarios": 7168
+    },
+    {
+      "suite": "radial_perturbation",
+      "policy": "CRG universal monotone",
+      "retained_min": 5,
+      "retained_max": 5,
+      "winner_miss_rate": 0.0,
+      "mean_relative_regret": 0.0,
+      "median_relative_regret": 0.0,
+      "p95_relative_regret": 0.0,
+      "max_relative_regret": 0.0,
+      "scenarios": 7168
+    }
+  ],
+  "capability_change": {
+    "scenarios": 1024,
+    "change_detection_rate": 1.0,
+    "vertical_winner_rate": 0.970703125,
+    "mean_erroneous_reprice_only_regret": 0.2745054646917417,
+    "p95_erroneous_reprice_only_regret": 0.47908681816365617,
+    "post_reopen_max_regret": 0.0
+  },
+  "interpretation": {
+    "matched_baseline": "Exact minimax-regret DSE and the CRG construction-ledger cover selected the same retained sets on all four workloads.",
+    "finite_scope": "The finite-ledger certificate is exact on its frozen ledger but does not extrapolate to out-of-distribution technologies.",
+    "universal_scope": "CRG universal-monotone retention is exact for every tested unchanged-family monotone objective and retains all five nondominated typed signatures.",
+    "capability": "Vertical capability changes legality; reopen, rather than reprice, restores zero regret."
+  }
+}
