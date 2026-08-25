@@ -1,0 +1,98 @@
+{
+  "title": "Computation-Realization Geometry publication corpus",
+  "creator": "Fitih M. Cinnor",
+  "collective_attribution": "semiAIfoundry Research",
+  "publisher": "Semi AI Foundry LLC",
+  "year": 2026,
+  "canonical_theory_doi": "10.5281/zenodo.22048090",
+  "records": [
+    {
+      "key": "canonical",
+      "group": "Canonical theory",
+      "type": "article",
+      "title": "A Communication Theory of Computation Realization: Resource-Conditioned Geometry of Legal Realizations and the Safe-Commitment Law",
+      "doi": "10.5281/zenodo.22048090",
+      "role": "Canonical theory and integrated manuscript",
+      "doi_url": "https://doi.org/10.5281/zenodo.22048090",
+      "publisher": "Semi AI Foundry LLC",
+      "year": 2026
+    },
+    {
+      "key": "foundations",
+      "group": "Specialist papers",
+      "type": "article",
+      "title": "Computation-Realization Geometry: Semantic Interface Laws, Decision-Sufficient Abstraction, and Cost Duality",
+      "doi": "10.5281/zenodo.22050676",
+      "role": "Foundations, interface laws, observation quotients, and cost duality",
+      "doi_url": "https://doi.org/10.5281/zenodo.22050676",
+      "publisher": "Semi AI Foundry LLC",
+      "year": 2026
+    },
+    {
+      "key": "rent",
+      "group": "Specialist papers",
+      "type": "article",
+      "title": "A Generalized Rent Law from Computation-Realization Geometry: Scaling Fixed Points, Hierarchy Phase, and Finite-Scale Diagnostics",
+      "doi": "10.5281/zenodo.22050605",
+      "role": "Scaling theory, hierarchy phase, curvature, and public-netlist diagnostics",
+      "doi_url": "https://doi.org/10.5281/zenodo.22050605",
+      "publisher": "Semi AI Foundry LLC",
+      "year": 2026
+    },
+    {
+      "key": "design",
+      "group": "Specialist papers",
+      "type": "article",
+      "title": "Designing with Computation-Realization Geometry: Certified Architecture Selection, Technology Matching, and Reference Physical Realization",
+      "doi": "10.5281/zenodo.22050638",
+      "role": "Certified design, technology matching, and physical realization",
+      "doi_url": "https://doi.org/10.5281/zenodo.22050638",
+      "publisher": "Semi AI Foundry LLC",
+      "year": 2026
+    },
+    {
+      "key": "closure",
+      "group": "Specialist papers",
+      "type": "article",
+      "title": "Closure Theorems for Computation-Realization Geometry: Interaction, Safe Commitment, Network Embedding, Conservation, and Scaling",
+      "doi": "10.5281/zenodo.22050654",
+      "role": "Interaction, conservation, embedding, closure, and safe commitment",
+      "doi_url": "https://doi.org/10.5281/zenodo.22050654",
+      "publisher": "Semi AI Foundry LLC",
+      "year": 2026
+    },
+    {
+      "key": "transformer",
+      "group": "Specialist papers",
+      "type": "article",
+      "title": "Certified Nonseparable Co-Design of a Long-Context Transformer Superblock: A Computation-Realization Geometry Case Study",
+      "doi": "10.5281/zenodo.22058422",
+      "role": "Finite-registry Transformer co-design case study",
+      "doi_url": "https://doi.org/10.5281/zenodo.22058422",
+      "publisher": "Semi AI Foundry LLC",
+      "year": 2026
+    },
+    {
+      "key": "volume-1",
+      "group": "Systems and embodiments",
+      "type": "report",
+      "title": "Physical Realization, Certified Search, and Safe-Commitment Control: Computation–Realization Systems and Embodiments Volume I",
+      "doi": "10.5281/zenodo.22051089",
+      "role": "Comprehensive design-side systems and embodiments",
+      "doi_url": "https://doi.org/10.5281/zenodo.22051089",
+      "publisher": "Semi AI Foundry LLC",
+      "year": 2026
+    },
+    {
+      "key": "volume-2",
+      "group": "Systems and embodiments",
+      "type": "report",
+      "title": "Evidence-Conditioned Technology Qualification: Computation–Realization Systems and Embodiments Volume II",
+      "doi": "10.5281/zenodo.22051129",
+      "role": "Comprehensive evidence, qualification, and control systems",
+      "doi_url": "https://doi.org/10.5281/zenodo.22051129",
+      "publisher": "Semi AI Foundry LLC",
+      "year": 2026
+    }
+  ]
+}

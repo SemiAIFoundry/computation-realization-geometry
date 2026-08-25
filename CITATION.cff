@@ -1,0 +1,87 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript that supports the result you use."
+title: "Computation-Realization Geometry: Research and Validation Corpus"
+type: dataset
+version: "1.0.0"
+authors:
+  - family-names: Cinnor
+    given-names: Fitih M.
+abstract: >-
+  Final manuscript citation metadata, study-specific reproduction programs,
+  retained scientific records, figures, theorem checks, negative controls,
+  benchmark inputs, and integrity records supporting Computation-Realization
+  Geometry. The CRG System implementation is distributed separately.
+repository-code: https://github.com/semiaifoundry/computation-realization-geometry
+url: https://semiaifoundry.com/research/
+keywords:
+  - computation-realization geometry
+  - safe commitment
+  - communication theory
+  - reproducible research
+  - design-space retention
+  - heterogeneous integration
+preferred-citation:
+  type: article
+  title: "A Communication Theory of Computation Realization: Resource-Conditioned Geometry of Legal Realizations and the Safe-Commitment Law"
+  authors:
+    - family-names: Cinnor
+      given-names: Fitih M.
+  year: 2026
+  doi: 10.5281/zenodo.22048090
+references:
+
+- type: article
+  title: "Computation-Realization Geometry: Semantic Interface Laws, Decision-Sufficient Abstraction, and Cost Duality"
+  authors:
+    - family-names: Cinnor
+      given-names: Fitih M.
+  year: 2026
+  doi: 10.5281/zenodo.22050676
+
+- type: article
+  title: "A Generalized Rent Law from Computation-Realization Geometry: Scaling Fixed Points, Hierarchy Phase, and Finite-Scale Diagnostics"
+  authors:
+    - family-names: Cinnor
+      given-names: Fitih M.
+  year: 2026
+  doi: 10.5281/zenodo.22050605
+
+- type: article
+  title: "Designing with Computation-Realization Geometry: Certified Architecture Selection, Technology Matching, and Reference Physical Realization"
+  authors:
+    - family-names: Cinnor
+      given-names: Fitih M.
+  year: 2026
+  doi: 10.5281/zenodo.22050638
+
+- type: article
+  title: "Closure Theorems for Computation-Realization Geometry: Interaction, Safe Commitment, Network Embedding, Conservation, and Scaling"
+  authors:
+    - family-names: Cinnor
+      given-names: Fitih M.
+  year: 2026
+  doi: 10.5281/zenodo.22050654
+
+- type: article
+  title: "Certified Nonseparable Co-Design of a Long-Context Transformer Superblock: A Computation-Realization Geometry Case Study"
+  authors:
+    - family-names: Cinnor
+      given-names: Fitih M.
+  year: 2026
+  doi: 10.5281/zenodo.22058422
+
+- type: report
+  title: "Physical Realization, Certified Search, and Safe-Commitment Control: Computation–Realization Systems and Embodiments Volume I"
+  authors:
+    - family-names: Cinnor
+      given-names: Fitih M.
+  year: 2026
+  doi: 10.5281/zenodo.22051089
+
+- type: report
+  title: "Evidence-Conditioned Technology Qualification: Computation–Realization Systems and Embodiments Volume II"
+  authors:
+    - family-names: Cinnor
+      given-names: Fitih M.
+  year: 2026
+  doi: 10.5281/zenodo.22051129

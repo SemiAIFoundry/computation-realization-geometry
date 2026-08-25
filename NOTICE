@@ -1,0 +1,14 @@
+CRG Research and Validation Corpus
+
+Copyright 2026 Semi AI Foundry LLC.
+Developed by Fitih M. Cinnor for semiAIfoundry Research.
+
+Computation-Realization Geometry, CRG, CRG System, Communication Before
+Commitment, and associated names or marks may be used descriptively to identify
+the research or compatible software. This distribution grants no right to imply
+official status, certification, sponsorship, or endorsement.
+
+Third-party component: EPFL Combinational Benchmark Suite.
+Pinned upstream commit: 0060e156826e733d69bf5b3322d1bdd0d03a1f9a.
+The included BLIF files retain the upstream MIT License reproduced in
+LICENSES/EPFL-MIT.txt. No local modifications were made to those files.

@@ -1,0 +1,23 @@
+path_pattern	license_id	scope
+src/**/*.py	PolyForm-Noncommercial-1.0.0	project-created validation and integrity software
+tools/**/*.py	PolyForm-Noncommercial-1.0.0	project-created release-integrity software
+tests/**/*.py	PolyForm-Noncommercial-1.0.0	project-created tests
+.github/workflows/**/*.yml	PolyForm-Noncommercial-1.0.0	project-created automation
+pyproject.toml	PolyForm-Noncommercial-1.0.0	project-created packaging configuration
+requirements/**/*.txt	CC-BY-NC-4.0	project-created dependency records
+validation/**/*.py	PolyForm-Noncommercial-1.0.0	project-created study-specific software
+validation/**/*.sh	PolyForm-Noncommercial-1.0.0	project-created study-specific software
+validation/**/*.{csv,csv.gz,json,txt,tex,png,pdf}	CC-BY-NC-4.0	project-created study records and figures
+manuscripts/DOI_CROSSWALK.tsv	CC-BY-NC-4.0	project-created citation metadata
+manuscripts/PUBLICATION_CORPUS.bib	CC-BY-NC-4.0	project-created citation metadata
+manuscripts/PUBLICATION_CORPUS.json	CC-BY-NC-4.0	project-created citation metadata
+README.md	CC-BY-NC-4.0	project-created documentation
+CITATION.cff	CC-BY-NC-4.0	project-created citation metadata
+release-metadata.json	CC-BY-NC-4.0	project-created release metadata
+MANIFEST.tsv	CC-BY-NC-4.0	project-created integrity metadata
+SHA256SUMS.txt	CC-BY-NC-4.0	project-created integrity metadata
+third_party/epfl/netlists/**	MIT	unmodified EPFL benchmark inputs
+third_party/epfl/PROVENANCE.json	CC-BY-NC-4.0	project-created provenance record
+LICENSES/EPFL-MIT.txt	MIT	unmodified upstream license text
+LICENSES/PolyForm-Noncommercial-1.0.0.txt	PolyForm-Noncommercial-1.0.0	standard license text
+LICENSES/CC-BY-NC-4.0.txt	CC-BY-NC-4.0	standard license text

@@ -1,0 +1,86 @@
+{
+  "component": "EPFL Combinational Benchmark Suite",
+  "verification_date": "2026-08-09",
+  "official_repository": "https://github.com/lsils/benchmarks",
+  "pinned_commit": "0060e156826e733d69bf5b3322d1bdd0d03a1f9a",
+  "pinned_tree": "https://github.com/lsils/benchmarks/tree/0060e156826e733d69bf5b3322d1bdd0d03a1f9a",
+  "commit_timestamp": "2026-05-06T10:18:10-07:00",
+  "commit_subject": "Update README.md for submission cycle",
+  "license": "MIT",
+  "license_file": "../../LICENSES/EPFL-MIT.txt",
+  "license_sha256": "83e4dd21429a91fb7cea67a476032a9641425e5355df2e0f589a738b6ec9fd2c",
+  "upstream_notice": "Copyright (c) 2018",
+  "citation": "L. Amarù, P.-E. Gaillardon, and G. De Micheli, The EPFL Combinational Benchmark Suite, Proceedings of IWLS, 2015.",
+  "files": [
+    {
+      "local_path": "netlists/adder.blif",
+      "upstream_path": "arithmetic/adder.blif",
+      "bytes": 31721,
+      "sha256": "3126ec3f60fa4a37ac94fa5e70aa8706aac79ccf316ddaa09ed70db33625d472",
+      "local_modifications": false
+    },
+    {
+      "local_path": "netlists/arbiter.blif",
+      "upstream_path": "random_control/arbiter.blif",
+      "bytes": 361749,
+      "sha256": "bf808364cacf4ccf38f9fdbfec39e33a407681b0cdf65783613ad8466b1c1499",
+      "local_modifications": false
+    },
+    {
+      "local_path": "netlists/bar.blif",
+      "upstream_path": "arithmetic/bar.blif",
+      "bytes": 103384,
+      "sha256": "cbda4fc7dffda03ace50aa1d329ca81b0b597c6f52c480f12c5dfa3b93437a4b",
+      "local_modifications": false
+    },
+    {
+      "local_path": "netlists/div.blif",
+      "upstream_path": "arithmetic/div.blif",
+      "bytes": 1862172,
+      "sha256": "4c19702b927f23fd99940b283833ad65ec2694deecea7730444fc1ee1691a456",
+      "local_modifications": false
+    },
+    {
+      "local_path": "netlists/i2c.blif",
+      "upstream_path": "random_control/i2c.blif",
+      "bytes": 40779,
+      "sha256": "9a600ae50bbfd998251310c0432374b8bfad5adc1c8c89ea75e1e640e70cd999",
+      "local_modifications": false
+    },
+    {
+      "local_path": "netlists/log2.blif",
+      "upstream_path": "arithmetic/log2.blif",
+      "bytes": 1011939,
+      "sha256": "c0d052af4e95de4c1327a2ceddd855518a052a8f3a3960e6d58c5b5ca65c0dde",
+      "local_modifications": false
+    },
+    {
+      "local_path": "netlists/multiplier.blif",
+      "upstream_path": "arithmetic/multiplier.blif",
+      "bytes": 853128,
+      "sha256": "9f66477f16653748f444fb00ff076330d51da706607253e98d2ddfdbe69edd75",
+      "local_modifications": false
+    },
+    {
+      "local_path": "netlists/router.blif",
+      "upstream_path": "random_control/router.blif",
+      "bytes": 9369,
+      "sha256": "eabb05688bbb01fc623ce1c1d231d3356b47e82948a6b9537b39eab2d8f7aa0c",
+      "local_modifications": false
+    },
+    {
+      "local_path": "netlists/sqrt.blif",
+      "upstream_path": "arithmetic/sqrt.blif",
+      "bytes": 807545,
+      "sha256": "7c5a28925fb2a6b3f1d0979ceaa93eafabea39fa418ec717e09cb4ff3b882107",
+      "local_modifications": false
+    },
+    {
+      "local_path": "netlists/square.blif",
+      "upstream_path": "arithmetic/square.blif",
+      "bytes": 577062,
+      "sha256": "a5ffcd4b148c690817d0391bbe0894686ac983aaa0f43d24281bccdb2287b8f5",
+      "local_modifications": false
+    }
+  ]
+}
