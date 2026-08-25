@@ -7,11 +7,12 @@ import platform
 import sys
 
 EXPECTED = {
-    "numpy": "2.3.5",
-    "pandas": "2.2.3",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "tzdata": "2026.3",
     "matplotlib": "3.10.8",
-    "scipy": "1.17.0",
-    "pytest": "9.0.3",
+    "scipy": "1.18.1",
+    "pytest": "9.1.1",
 }
 
 

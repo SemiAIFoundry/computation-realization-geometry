@@ -94,3 +94,22 @@ def test_wheel_build_artifacts_remain_outside_the_attested_checkout() -> None:
     assert '"${RUNNER_TEMP}"/dist-a/*.whl' in workflow
     assert "--wheel-dir dist-a" not in workflow
     assert "--wheel-dir dist-b" not in workflow
+
+
+def test_workflow_actions_remain_pinned_to_full_commit_shas() -> None:
+    root = Path(__file__).resolve().parents[1]
+    workflow = (root / ".github" / "workflows" / "validation.yml").read_text(encoding="utf-8")
+    references = re.findall(r"^\s*- uses: [^@\s]+@([^\s]+)", workflow, flags=re.MULTILINE)
+
+    assert references
+    assert all(re.fullmatch(r"[0-9a-f]{40}", reference) for reference in references)
+
+
+def test_dependabot_keeps_visual_stack_updates_separate() -> None:
+    root = Path(__file__).resolve().parents[1]
+    configuration = (root / ".github" / "dependabot.yml").read_text(encoding="utf-8")
+
+    assert "validation-stack:" in configuration
+    assert "workflow-actions:" in configuration
+    assert "exclude-patterns:" in configuration
+    assert '- "matplotlib"' in configuration

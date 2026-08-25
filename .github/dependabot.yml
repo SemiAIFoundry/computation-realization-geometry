@@ -7,8 +7,18 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    groups:
+      validation-stack:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "matplotlib"
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    groups:
+      workflow-actions:
+        patterns:
+          - "*"

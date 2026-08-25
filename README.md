@@ -45,6 +45,9 @@ CPython 3.12 and 3.13 are supported. Direct dependencies are pinned in
 `requirements/validation.txt` and `pyproject.toml`; the fully resolved public
 validation environment is hash-locked in `requirements/validation.lock`, and
 the packaging toolchain is separately locked in `requirements/build.lock`.
+Retained figure fidelity is bound to Matplotlib 3.10.8; rendering with another
+minor release is a separately reviewed visual-corpus revision, not a routine
+environment substitution.
 
 ```bash
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m crg_validation.cli scope-check
