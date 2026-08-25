@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-FileCopyrightText: 2026 Semi AI Foundry LLC
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 """RCCG Northstar Transformer model v3.1: Round-5 semantic closure.
 
@@ -1561,7 +1561,7 @@ def _write_csv(
         return
     selected_fields = list(fields or rows[0].keys())
     with path.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=selected_fields)
+        writer = csv.DictWriter(fh, fieldnames=selected_fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

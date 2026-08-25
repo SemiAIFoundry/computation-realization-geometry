@@ -1,17 +1,35 @@
 path_pattern	license_id	scope
+.gitattributes	PolyForm-Noncommercial-1.0.0	project-created repository configuration
+.gitignore	PolyForm-Noncommercial-1.0.0	project-created repository configuration
+LICENSE	CC-BY-NC-4.0	project-created license notice
+LICENSE_SCOPE.tsv	CC-BY-NC-4.0	project-created machine-readable license classification
+NOTICE	CC-BY-NC-4.0	project-created attribution and provenance notice
+VERSION	CC-BY-NC-4.0	project-created release metadata
 src/**/*.py	PolyForm-Noncommercial-1.0.0	project-created validation and integrity software
 tools/**/*.py	PolyForm-Noncommercial-1.0.0	project-created release-integrity software
 tests/**/*.py	PolyForm-Noncommercial-1.0.0	project-created tests
 .github/workflows/**/*.yml	PolyForm-Noncommercial-1.0.0	project-created automation
+.github/dependabot.yml	PolyForm-Noncommercial-1.0.0	project-created dependency automation
 pyproject.toml	PolyForm-Noncommercial-1.0.0	project-created packaging configuration
 requirements/**/*.txt	CC-BY-NC-4.0	project-created dependency records
+requirements/**/*.lock	CC-BY-NC-4.0	project-created hash-locked dependency records
 validation/**/*.py	PolyForm-Noncommercial-1.0.0	project-created study-specific software
 validation/**/*.sh	PolyForm-Noncommercial-1.0.0	project-created study-specific software
-validation/**/*.{csv,csv.gz,json,txt,tex,png,pdf}	CC-BY-NC-4.0	project-created study records and figures
+validation/**/*.csv	CC-BY-NC-4.0	project-created study records and figures
+validation/**/*.csv.gz	CC-BY-NC-4.0	project-created study records and figures
+validation/**/*.json	CC-BY-NC-4.0	project-created study records and figures
+validation/**/*.txt	CC-BY-NC-4.0	project-created study records and figures
+validation/**/*.tex	CC-BY-NC-4.0	project-created study records and figures
+validation/**/*.png	CC-BY-NC-4.0	project-created study records and figures
+validation/**/*.pdf	CC-BY-NC-4.0	project-created study records and figures
 manuscripts/DOI_CROSSWALK.tsv	CC-BY-NC-4.0	project-created citation metadata
 manuscripts/PUBLICATION_CORPUS.bib	CC-BY-NC-4.0	project-created citation metadata
 manuscripts/PUBLICATION_CORPUS.json	CC-BY-NC-4.0	project-created citation metadata
 README.md	CC-BY-NC-4.0	project-created documentation
+SECURITY.md	CC-BY-NC-4.0	project-created security policy
+CONTRIBUTING.md	CC-BY-NC-4.0	project-created contribution policy
+CODE_OF_CONDUCT.md	CC-BY-NC-4.0	project-created conduct policy
+GOVERNANCE.md	CC-BY-NC-4.0	project-created governance policy
 CITATION.cff	CC-BY-NC-4.0	project-created citation metadata
 release-metadata.json	CC-BY-NC-4.0	project-created release metadata
 MANIFEST.tsv	CC-BY-NC-4.0	project-created integrity metadata

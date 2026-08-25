@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 Semi AI Foundry LLC
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 from __future__ import annotations
 
@@ -140,9 +140,9 @@ def main() -> None:
             net_rows.append({"design": name, **row})
         summary_rows.append({"design": name, **result["physical_ppa"], **routing, "semantic_bridge_latency_ns": link["semantic_bridge_latency_ns"], "worst_memory_latency_ns": link["worst_memory_latency_ns"], "timing_slack_ns": link["timing_slack_ns"], "required_shoreline_mm": link["required_shoreline_mm"], "timing_feasible": link["timing_feasible"]})
 
-    pd.DataFrame(net_rows).to_csv(OUT / "net_metrics.csv", index=False)
+    pd.DataFrame(net_rows).to_csv(OUT / "net_metrics.csv", index=False, lineterminator="\n")
     summary_df = pd.DataFrame(summary_rows)
-    summary_df.to_csv(OUT / "design_comparison.csv", index=False)
+    summary_df.to_csv(OUT / "design_comparison.csv", index=False, lineterminator="\n")
     (OUT / "study_summary.json").write_text(json.dumps(all_results, indent=2, default=float), encoding="utf-8")
 
     # Comparison figure with normalized metrics (lower is better except yield/test).

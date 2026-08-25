@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-FileCopyrightText: 2026 Semi AI Foundry LLC
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 """Recompute retention-study results from a frozen, provenance-bound ledger."""
 from __future__ import annotations
@@ -394,7 +394,7 @@ def reanalyze(root: Path, output: Path, figure_dir: Path) -> dict:
         ("budget_frontier.csv", frontier), ("capability_change_results.csv", capabilities),
         ("aggregate_policy_summary.csv", aggregate), ("regret_vs_perturbation_magnitude.csv", radial),
     ):
-        frame.to_csv(output / name, index=False)
+        frame.to_csv(output / name, index=False, lineterminator="\n")
     (output / "experiment_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
 
     display = [

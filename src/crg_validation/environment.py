@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 Semi AI Foundry LLC
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ EXPECTED = {
     "pandas": "2.2.3",
     "matplotlib": "3.10.8",
     "scipy": "1.17.0",
-    "pytest": "9.0.2",
+    "pytest": "9.0.3",
 }
 
 
@@ -26,12 +26,17 @@ def report() -> dict:
         packages[name] = actual
         if actual != expected:
             differences.append(f"{name}: {actual!r} != {expected!r}")
-    python_supported = sys.version_info >= (3, 12)
+    version = sys.version_info[:2]
+    implementation = platform.python_implementation()
+    python_supported = implementation == "CPython" and (3, 12) <= version < (3, 14)
     if not python_supported:
-        differences.append(f"Python {sys.version_info.major}.{sys.version_info.minor} is below 3.12")
+        differences.append(
+            f"{implementation} {sys.version_info.major}.{sys.version_info.minor} "
+            "is outside the supported CPython 3.12-3.13 range"
+        )
     return {
         "python": sys.version,
-        "implementation": platform.python_implementation(),
+        "implementation": implementation,
         "platform": platform.platform(),
         "python_supported": python_supported,
         "dependency_match": not differences,

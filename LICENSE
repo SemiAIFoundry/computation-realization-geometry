@@ -1,9 +1,12 @@
 CRG Research and Validation Corpus — Artifact-Specific License Notice
 
-Copyright 2026 Semi AI Foundry LLC.
+Copyright © 2026 Semi AI Foundry, LLC.
 
-Required attribution: Copyright 2026 Semi AI Foundry LLC. Developed by
-Fitih M. Cinnor for semiAIfoundry Research.
+Required Notice: CRG Research and Validation Corpus 1.0.0. Copyright © 2026 Semi AI Foundry, LLC. Developed by Fitih M. Cinnor for semiAIfoundry Research, a research group within Semi AI Foundry, LLC. https://github.com/SemiAIFoundry/computation-realization-geometry
+
+The licensor and copyright owner for all project-created materials is Semi AI
+Foundry, LLC. “semiAIfoundry Research” identifies an internal research group
+within Semi AI Foundry, LLC; it is not a separate legal entity or licensor.
 
 This repository is not governed by one blanket license.
 
@@ -26,11 +29,13 @@ This repository is not governed by one blanket license.
    validation materials rather than altering those manuscript licenses.
 
 5. Commercial use of project-created material requires a separate written
-   license from Semi AI Foundry LLC. This includes commercial product or service
+   license from Semi AI Foundry, LLC. This includes commercial product or service
    development, internal commercial research and development, paid consulting,
-   production deployment, hosted service operation, OEM embedding, commercial
-   redistribution, and commercial derivative products, except where a
-   controlling third-party license independently permits the specific use.
+   production deployment or hosted service operation for commercial activity,
+   OEM embedding, commercial redistribution, and commercial derivative
+   products, except where a controlling third-party license independently
+   permits the specific use.
+   Commercial licensing requests: https://semiaifoundry.com/contact/
 
 6. Attribution does not imply endorsement, certification, partnership, or
    warranty. No trademark rights are granted. No patent rights are granted

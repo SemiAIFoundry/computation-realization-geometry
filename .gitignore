@@ -1,0 +1,13 @@
+.venv/
+.runs/
+.generated/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+.DS_Store
+build/
+dist/
+*.egg-info/
+generated_figures/
+generated_transformer/
+logs/

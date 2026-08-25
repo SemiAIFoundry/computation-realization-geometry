@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 Semi AI Foundry LLC
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 from __future__ import annotations
 import json, math
@@ -136,7 +136,7 @@ def attention_analysis():
 
 def main():
     df=gemm_rows(); pm=phase_map(); plot_gemm(df,pm)
-    df.to_csv(OUT/'gemm_25d_technology.csv',index=False); pm.to_csv(OUT/'gemm_memory_phase.csv',index=False)
+    df.to_csv(OUT/'gemm_25d_technology.csv',index=False,lineterminator="\n"); pm.to_csv(OUT/'gemm_memory_phase.csv',index=False,lineterminator="\n")
     att=attention_analysis()
     thresholds=[]
     for sram in SRAM_MIB:

@@ -1,9 +1,9 @@
 {
   "repository_name": "computation-realization-geometry",
   "repository_title": "Computation-Realization Geometry: Research and Validation Corpus",
-  "repository_url": "https://github.com/semiaifoundry/computation-realization-geometry",
+  "repository_url": "https://github.com/SemiAIFoundry/computation-realization-geometry",
   "version": "1.0.0",
-  "release_date": "2026-08-25",
+  "release_date": null,
   "package_type": "public-research-validation-corpus",
   "publication_records": [
     {
@@ -14,7 +14,7 @@
       "doi": "10.5281/zenodo.22048090",
       "role": "Canonical theory and integrated manuscript",
       "doi_url": "https://doi.org/10.5281/zenodo.22048090",
-      "publisher": "Semi AI Foundry LLC",
+      "publisher": "Semi AI Foundry, LLC",
       "year": 2026
     },
     {
@@ -25,7 +25,7 @@
       "doi": "10.5281/zenodo.22050676",
       "role": "Foundations, interface laws, observation quotients, and cost duality",
       "doi_url": "https://doi.org/10.5281/zenodo.22050676",
-      "publisher": "Semi AI Foundry LLC",
+      "publisher": "Semi AI Foundry, LLC",
       "year": 2026
     },
     {
@@ -36,7 +36,7 @@
       "doi": "10.5281/zenodo.22050605",
       "role": "Scaling theory, hierarchy phase, curvature, and public-netlist diagnostics",
       "doi_url": "https://doi.org/10.5281/zenodo.22050605",
-      "publisher": "Semi AI Foundry LLC",
+      "publisher": "Semi AI Foundry, LLC",
       "year": 2026
     },
     {
@@ -47,18 +47,18 @@
       "doi": "10.5281/zenodo.22050638",
       "role": "Certified design, technology matching, and physical realization",
       "doi_url": "https://doi.org/10.5281/zenodo.22050638",
-      "publisher": "Semi AI Foundry LLC",
+      "publisher": "Semi AI Foundry, LLC",
       "year": 2026
     },
     {
       "key": "closure",
       "group": "Specialist papers",
       "type": "article",
-      "title": "Closure Theorems for Computation-Realization Geometry: Interaction, Safe Commitment, Network Embedding, Conservation, and Scaling",
+      "title": "Structural Theorems for Computation-Realization Geometry: Interaction, Safe Commitment, Network Embedding, Conservation, and Scaling",
       "doi": "10.5281/zenodo.22050654",
       "role": "Interaction, conservation, embedding, closure, and safe commitment",
       "doi_url": "https://doi.org/10.5281/zenodo.22050654",
-      "publisher": "Semi AI Foundry LLC",
+      "publisher": "Semi AI Foundry, LLC",
       "year": 2026
     },
     {
@@ -69,29 +69,7 @@
       "doi": "10.5281/zenodo.22058422",
       "role": "Finite-registry Transformer co-design case study",
       "doi_url": "https://doi.org/10.5281/zenodo.22058422",
-      "publisher": "Semi AI Foundry LLC",
-      "year": 2026
-    },
-    {
-      "key": "volume-1",
-      "group": "Systems and embodiments",
-      "type": "report",
-      "title": "Physical Realization, Certified Search, and Safe-Commitment Control: Computation–Realization Systems and Embodiments Volume I",
-      "doi": "10.5281/zenodo.22051089",
-      "role": "Comprehensive design-side systems and embodiments",
-      "doi_url": "https://doi.org/10.5281/zenodo.22051089",
-      "publisher": "Semi AI Foundry LLC",
-      "year": 2026
-    },
-    {
-      "key": "volume-2",
-      "group": "Systems and embodiments",
-      "type": "report",
-      "title": "Evidence-Conditioned Technology Qualification: Computation–Realization Systems and Embodiments Volume II",
-      "doi": "10.5281/zenodo.22051129",
-      "role": "Comprehensive evidence, qualification, and control systems",
-      "doi_url": "https://doi.org/10.5281/zenodo.22051129",
-      "publisher": "Semi AI Foundry LLC",
+      "publisher": "Semi AI Foundry, LLC",
       "year": 2026
     }
   ],
@@ -100,6 +78,7 @@
   "system_distribution": "separate-package",
   "default_content_license": "CC-BY-NC-4.0",
   "default_software_license": "PolyForm-Noncommercial-1.0.0",
-  "commercial_license_required": true,
-  "status": "public-release"
+  "research_and_noncommercial_use_of_project_created_repository_materials_permitted_with_attribution": true,
+  "commercial_use_of_project_created_repository_materials_requires_separate_license": true,
+  "status": "pre-release"
 }

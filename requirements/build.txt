@@ -1,0 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
+# SPDX-License-Identifier: CC-BY-NC-4.0
+--only-binary=:all:
+setuptools==84.0.0
+wheel==0.48.0
