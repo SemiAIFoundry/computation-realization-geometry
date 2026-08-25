@@ -1,0 +1,13 @@
+design,net,kind,provisioned_bandwidth_GBs,actual_data_rate_GBs,lane_units,length_mm,serialization_ns,propagation_ns,protocol_ns,latency_ns,link_power_w,max_edge_utilization,overflow_units,signal_bumps
+CRG-2p5D-side-by-side,semantic_bridge,activation,16.384,14.7456,9,7.0,2000.0,0.105,2.0,2002.105,0.04128768,0.09375,0.0,26
+CRG-2p5D-side-by-side,attention_hbm0,memory,37.8,34.02,19,5.0,2000.0,0.075,2.5,2002.575,0.12247200000000001,0.19791666666666666,0.0,46
+CRG-2p5D-side-by-side,attention_hbm1,memory,37.8,34.02,19,2.0,2000.0,0.03,2.5,2002.53,0.12247200000000001,0.19791666666666666,0.0,46
+CRG-2p5D-side-by-side,ffn_hbm2,memory,52.2,46.98,27,2.0,2000.0,0.03,2.5,2002.53,0.169128,0.28125,0.0,62
+CRG-2p5D-side-by-side,ffn_hbm3,memory,52.2,46.98,27,5.0,2000.0,0.075,2.5,2002.575,0.169128,0.28125,0.0,62
+CRG-2p5D-side-by-side,control_attention,control_test,1.0,0.1152,2,10.0,75.29411764705881,0.15,4.0,79.44411764705882,0.00055296,0.020833333333333332,0.0,12
+CRG-2p5D-side-by-side,control_ffn,control_test,1.0,0.1152,2,16.0,75.29411764705881,0.24,4.0,79.5341176470588,0.00055296,0.020833333333333332,0.0,12
+CRG-3D-face-to-face,vertical_semantic_bridge,activation,128.0,14.7456,64,0.05,256.0,0.02,0.6,256.62,0.009437184,0.0,0.0,136
+CRG-3D-face-to-face,stack_hbm0,memory,37.8,34.02,19,6.5,2000.0,0.0975,2.0,2002.0975,0.10886400000000002,0.19791666666666666,0.0,46
+CRG-3D-face-to-face,stack_hbm1,memory,37.8,34.02,19,2.0,2000.0,0.03,2.0,2002.03,0.10886400000000002,0.19791666666666666,0.0,46
+CRG-3D-face-to-face,stack_hbm2,memory,52.2,46.98,27,4.0,2000.0,0.06,2.0,2002.06,0.150336,0.28125,0.0,62
+CRG-3D-face-to-face,stack_hbm3,memory,52.2,46.98,27,8.5,2000.0,0.1275,2.0,2002.1275,0.150336,0.5625,0.0,62

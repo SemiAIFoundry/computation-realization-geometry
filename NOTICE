@@ -1,12 +1,21 @@
 CRG Research and Validation Corpus
 
-Copyright 2026 Semi AI Foundry LLC.
-Developed by Fitih M. Cinnor for semiAIfoundry Research.
+Copyright © 2026 Semi AI Foundry, LLC.
+Developed by Fitih M. Cinnor for semiAIfoundry Research, a research group
+within Semi AI Foundry, LLC.
 
-Computation-Realization Geometry, CRG, CRG System, Communication Before
+Required Notice: CRG Research and Validation Corpus 1.0.0. Copyright © 2026 Semi AI Foundry, LLC. Developed by Fitih M. Cinnor for semiAIfoundry Research, a research group within Semi AI Foundry, LLC. https://github.com/SemiAIFoundry/computation-realization-geometry
+
+Computation-Realization Geometry, CRG, CRG Systems, Communication Before
 Commitment, and associated names or marks may be used descriptively to identify
 the research or compatible software. This distribution grants no right to imply
 official status, certification, sponsorship, or endorsement.
+
+Historical filenames and retained artifact identifiers containing RCCG,
+northstar, trilogy, vNext4, closure, or earlier version labels are preserved
+where renaming would disrupt reproducibility or checksum lineage. They identify
+historical artifacts within the CRG record, not separate current projects or
+current repository release versions.
 
 Third-party component: EPFL Combinational Benchmark Suite.
 Pinned upstream commit: 0060e156826e733d69bf5b3322d1bdd0d03a1f9a.

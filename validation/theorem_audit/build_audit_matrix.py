@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 Semi AI Foundry LLC
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 from __future__ import annotations
 import csv, json
@@ -104,7 +104,7 @@ add("18.4","Exact aligned-layout assignment","45","PASS-C / OPEN-N","Known assig
 # Write files
 fields=list(rows[0].keys())
 with open(ROOT/'theorem_audit_matrix.csv','w',newline='',encoding='utf-8') as f:
- w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerows(rows)
+        w=csv.DictWriter(f,fieldnames=fields,lineterminator="\n"); w.writeheader(); w.writerows(rows)
 (ROOT/'theorem_audit_matrix.json').write_text(json.dumps(rows,indent=2),encoding='utf-8')
 
 # Summary counts

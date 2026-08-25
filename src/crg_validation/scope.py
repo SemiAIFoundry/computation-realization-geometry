@@ -1,17 +1,20 @@
-# SPDX-FileCopyrightText: 2026 Semi AI Foundry LLC
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 from __future__ import annotations
 
 import csv
+import os
 import re
 from pathlib import Path
 
 ALLOWED_ROOT_FILES = {
-    ".gitattributes", ".gitignore", "CITATION.cff", "LICENSE",
-    "LICENSE_SCOPE.tsv", "MANIFEST.tsv", "NOTICE", "README.md",
+    ".gitattributes", ".gitignore", "CITATION.cff", "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md", "GOVERNANCE.md", "LICENSE", "LICENSE_SCOPE.tsv",
+    "MANIFEST.tsv", "NOTICE", "README.md", "SECURITY.md",
     "SHA256SUMS.txt", "VERSION", "pyproject.toml", "release-metadata.json",
 }
 ALLOWED_EXACT = {
+    ".github/dependabot.yml",
     ".github/workflows/validation.yml",
     "LICENSES/CC-BY-NC-4.0.txt",
     "LICENSES/EPFL-MIT.txt",
@@ -19,18 +22,29 @@ ALLOWED_EXACT = {
     "manuscripts/DOI_CROSSWALK.tsv",
     "manuscripts/PUBLICATION_CORPUS.bib",
     "manuscripts/PUBLICATION_CORPUS.json",
+    "requirements/audit.txt",
+    "requirements/audit.lock",
+    "requirements/build.txt",
+    "requirements/build.lock",
     "requirements/validation.txt",
+    "requirements/validation.lock",
     "src/crg_validation/__init__.py",
     "src/crg_validation/cli.py",
     "src/crg_validation/compare.py",
     "src/crg_validation/environment.py",
     "src/crg_validation/manifest.py",
+    "src/crg_validation/paths.py",
     "src/crg_validation/runner.py",
     "src/crg_validation/scope.py",
     "tests/test_manifest.py",
+    "tests/test_dependencies.py",
+    "tests/test_integrity.py",
+    "tests/test_metadata.py",
+    "tests/test_paths.py",
     "tests/test_public_scope.py",
     "third_party/epfl/PROVENANCE.json",
     "tools/regenerate_release.py",
+    "tools/verify_wheel.py",
 }
 ALLOWED_PREFIXES = (
     "third_party/epfl/netlists/",
@@ -85,6 +99,18 @@ SECRET_PATTERNS = (
         r"\s*[:=]\s*[\"'][^\"'\n]{8,}[\"']"
     ),
 )
+EXPECTED_DOIS = {
+    "canonical": "10.5281/zenodo.22048090",
+    "foundations": "10.5281/zenodo.22050676",
+    "rent": "10.5281/zenodo.22050605",
+    "design": "10.5281/zenodo.22050638",
+    "closure": "10.5281/zenodo.22050654",
+    "transformer": "10.5281/zenodo.22058422",
+}
+REQUIRED_MARKDOWN = {
+    "CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "GOVERNANCE.md", "README.md",
+    "SECURITY.md",
+}
 
 
 def _allowed(rel: Path) -> bool:
@@ -96,36 +122,65 @@ def _allowed(rel: Path) -> bool:
     return any(value.startswith(prefix) for prefix in ALLOWED_PREFIXES)
 
 
+def _iter_public_files(root: Path, include_transient: bool, errors: list[str]):
+    """Walk public payload while pruning checkout and generated directories."""
+    for current, directories, filenames in os.walk(root, followlinks=False):
+        current_path = Path(current)
+        retained_directories = []
+        for name in directories:
+            path = current_path / name
+            rel = path.relative_to(root)
+            value = rel.as_posix()
+            if name == ".git":
+                continue
+            if path.is_symlink():
+                errors.append(f"symbolic link present: {value}")
+                continue
+            if name in TRANSIENT_PARTS or name.endswith(".egg-info"):
+                if include_transient:
+                    errors.append(f"transient directory present: {value}")
+                continue
+            retained_directories.append(name)
+        directories[:] = retained_directories
+
+        for name in filenames:
+            path = current_path / name
+            rel = path.relative_to(root)
+            value = rel.as_posix()
+            if path.is_symlink():
+                errors.append(f"symbolic link present: {value}")
+                continue
+            if path.suffix.lower() in {".pyc", ".pyo"} or name == ".DS_Store":
+                if include_transient:
+                    errors.append(f"transient file present: {value}")
+                continue
+            yield path, rel
+
+
 def check(root: Path, *, include_transient: bool = True) -> list[str]:
     errors: list[str] = []
     markdown = []
-    for path in root.rglob("*"):
-        rel = path.relative_to(root)
+    public_files = list(_iter_public_files(root, include_transient, errors))
+    for path, rel in public_files:
         value = rel.as_posix()
-        if path.is_dir():
-            continue
         if not _allowed(rel):
             errors.append(f"non-allowlisted file present: {value}")
         if path.name in FORBIDDEN_NAMES:
             errors.append(f"forbidden file present: {value}")
         if path.suffix.lower() == ".md":
             markdown.append(value)
-        if include_transient and (
-            path.suffix.lower() in {".pyc", ".pyo"}
-            or any(part in TRANSIENT_PARTS or part.endswith(".egg-info") for part in rel.parts)
-            or path.name == ".DS_Store"
-        ):
-            errors.append(f"transient file present: {value}")
         if path.suffix.lower() in {".zip", ".tar", ".tgz", ".7z"}:
             errors.append(f"nested archive present: {value}")
-    if markdown != ["README.md"]:
-        errors.append(f"public package must contain only README.md as Markdown; found {sorted(markdown)}")
+    if set(markdown) != REQUIRED_MARKDOWN:
+        errors.append(
+            "public policy-document set differs from the required set; "
+            f"found {sorted(markdown)}"
+        )
 
     scope_source = Path(__file__).resolve()
-    for path in root.rglob("*"):
-        if not path.is_file() or path.resolve() == scope_source:
+    for path, rel in public_files:
+        if path.resolve() == scope_source:
             continue
-        rel = path.relative_to(root)
         if path.suffix.lower() not in TEXT_SUFFIXES or path.stat().st_size > 10 * 1024 * 1024:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
@@ -146,8 +201,10 @@ def check(root: Path, *, include_transient: bool = True) -> list[str]:
             errors.append(f"missing PolyForm SPDX identifier: {path.relative_to(root).as_posix()}")
 
     required = {
-        "README.md", "LICENSE", "NOTICE", "LICENSE_SCOPE.tsv", "CITATION.cff",
-        "VERSION", "release-metadata.json", "manuscripts/DOI_CROSSWALK.tsv",
+        "README.md", "SECURITY.md", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md",
+        "GOVERNANCE.md", "LICENSE", "NOTICE", "LICENSE_SCOPE.tsv",
+        "CITATION.cff", "VERSION", "release-metadata.json",
+        "manuscripts/DOI_CROSSWALK.tsv",
     }
     for name in sorted(required):
         if not (root / name).is_file():
@@ -157,8 +214,9 @@ def check(root: Path, *, include_transient: bool = True) -> list[str]:
     if doi_path.is_file():
         with doi_path.open(newline="", encoding="utf-8") as handle:
             rows = list(csv.DictReader(handle, delimiter="\t"))
-        if len(rows) != 8:
-            errors.append(f"expected 8 manuscript DOI records, found {len(rows)}")
+        observed = {row.get("key", ""): row.get("doi", "") for row in rows}
+        if len(rows) != len(EXPECTED_DOIS) or observed != EXPECTED_DOIS:
+            errors.append(f"DOI crosswalk differs from the six verified records: {observed}")
         for row in rows:
             doi = row.get("doi", "")
             if not doi.startswith("10.5281/zenodo.") or any(token in doi.lower() for token in ("tbd", "placeholder", "pending")):

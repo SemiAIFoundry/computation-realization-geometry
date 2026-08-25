@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 Semi AI Foundry LLC
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 from __future__ import annotations
 import os
@@ -279,9 +279,9 @@ def main(paths):
         rows=level_metrics(nl,levels); all_rows.extend(rows); sums.append(summarize(rows))
         print('summary',sums[-1])
     with (outdir/'levels.csv').open('w',newline='') as f:
-        w=csv.DictWriter(f,fieldnames=list(all_rows[0].keys())); w.writeheader(); w.writerows(all_rows)
+        w=csv.DictWriter(f,fieldnames=list(all_rows[0].keys()),lineterminator="\n"); w.writeheader(); w.writerows(all_rows)
     with (outdir/'summary.csv').open('w',newline='') as f:
-        w=csv.DictWriter(f,fieldnames=list(sums[0].keys())); w.writeheader(); w.writerows(sums)
+        w=csv.DictWriter(f,fieldnames=list(sums[0].keys()),lineterminator="\n"); w.writeheader(); w.writerows(sums)
     (outdir/'summary.json').write_text(json.dumps(sums,indent=2))
 
 if __name__=='__main__':

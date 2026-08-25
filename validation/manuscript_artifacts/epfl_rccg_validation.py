@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 Semi AI Foundry LLC
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 from __future__ import annotations
 import os
@@ -162,7 +162,7 @@ def curvature_closure(rows, out_prefix:Path):
         'observed_curvature':obs_curv,'predicted_curvature_power_modes':pred_curvature,
         'exact_curvature_measured_modes':exact_mix_curv,
     })
-    out.to_csv(out_prefix.with_suffix('.csv'),index=False)
+    out.to_csv(out_prefix.with_suffix('.csv'),index=False,lineterminator="\n")
     fig,axs=plt.subplots(3,1,figsize=(6.6,8.3),sharex=True)
     axs[0].loglog(np.exp(x),total,'o-',label='measured internal total')
     axs[0].loglog(np.exp(x),pred_total,'--',label='sum of fitted mode laws')
@@ -199,8 +199,8 @@ def main():
             levels=recursive_rcm_hierarchy(A,len(nl.vertices),min_size=8)
             rows=level_metrics_internal(nl,levels,'recursive-RCM'); all_rows.extend(rows); summaries.append(summary(rows)); bykey[(name,'recursive-RCM')]=rows
         print(name,len(nl.vertices),summaries[-1]); import gc; del A; gc.collect()
-    pd.DataFrame(all_rows).to_csv(outdir/'levels.csv',index=False)
-    pd.DataFrame(summaries).to_csv(outdir/'summary.csv',index=False)
+    pd.DataFrame(all_rows).to_csv(outdir/'levels.csv',index=False,lineterminator="\n")
+    pd.DataFrame(summaries).to_csv(outdir/'summary.csv',index=False,lineterminator="\n")
     (outdir/'summary.json').write_text(json.dumps(summaries,indent=2))
     closures=[]
     for hierarchy in ['RCM-fixed','recursive-RCM']:

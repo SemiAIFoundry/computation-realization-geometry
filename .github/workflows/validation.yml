@@ -1,0 +1,111 @@
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
+# SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+name: public-corpus-validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  MPLBACKEND: Agg
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  PYTHONDONTWRITEBYTECODE: "1"
+  PYTHONHASHSEED: "0"
+  SOURCE_DATE_EPOCH: "1787616000"
+
+jobs:
+  dependency-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements/audit.lock
+      - name: Install the hash-locked dependency auditor
+        run: python -m pip install --require-hashes -r requirements/audit.lock
+      - name: Audit the auditor and validation dependency graphs
+        run: |
+          python -m pip_audit -r requirements/audit.lock --require-hashes --no-deps --disable-pip
+          python -m pip_audit -r requirements/build.lock --require-hashes --no-deps --disable-pip
+          python -m pip_audit -r requirements/validation.lock --require-hashes --no-deps --disable-pip
+
+  dependency-review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/dependency-review-action@2031cfc080254a8a887f58cffee85186f0e49e48 # v4.9.0
+
+  validate:
+    name: validate (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: |
+            requirements/build.lock
+            requirements/validation.lock
+
+      - name: Check the real-clone public boundary before installation
+        run: PYTHONPATH=src python -m crg_validation.cli scope-check
+      - name: Install the hash-locked environment and local package
+        run: |
+          python -m pip install --require-hashes -r requirements/validation.lock
+          python -m pip install --require-hashes -r requirements/build.lock
+          python -m pip install --no-build-isolation --no-deps .
+          python -m pip check
+      - name: Check environment and retained integrity
+        run: |
+          crg-validation doctor
+          crg-validation manifest --verify
+      - name: Run unit, metadata, and retained-artifact tests
+        run: python -m pytest
+      - name: Reproduce every public validation profile
+        run: crg-validation run all
+
+      - name: Build the wheel twice
+        if: matrix.python-version == '3.12'
+        run: |
+          git archive --format=tar --output="${RUNNER_TEMP}/source.tar" HEAD
+          mkdir "${RUNNER_TEMP}/source-a" "${RUNNER_TEMP}/source-b"
+          tar -xf "${RUNNER_TEMP}/source.tar" -C "${RUNNER_TEMP}/source-a"
+          tar -xf "${RUNNER_TEMP}/source.tar" -C "${RUNNER_TEMP}/source-b"
+          python -m pip wheel --no-build-isolation --no-deps --wheel-dir dist-a "${RUNNER_TEMP}/source-a"
+          python -m pip wheel --no-build-isolation --no-deps --wheel-dir dist-b "${RUNNER_TEMP}/source-b"
+      - name: Verify reproducible wheel and legal payload
+        if: matrix.python-version == '3.12'
+        run: python tools/verify_wheel.py dist-a dist-b
+      - name: Verify a normal wheel installation outside the checkout
+        if: matrix.python-version == '3.12'
+        run: |
+          python -m venv "${RUNNER_TEMP}/crg-installed"
+          "${RUNNER_TEMP}/crg-installed/bin/python" -m pip install --require-hashes -r requirements/validation.lock
+          "${RUNNER_TEMP}/crg-installed/bin/python" -m pip install --no-deps dist-a/*.whl
+          "${RUNNER_TEMP}/crg-installed/bin/python" -m pip check
+          cd "${RUNNER_TEMP}"
+          "${RUNNER_TEMP}/crg-installed/bin/crg-validation" --root "${GITHUB_WORKSPACE}" manifest --verify
+          "${RUNNER_TEMP}/crg-installed/bin/crg-validation" --root "${GITHUB_WORKSPACE}" run smoke

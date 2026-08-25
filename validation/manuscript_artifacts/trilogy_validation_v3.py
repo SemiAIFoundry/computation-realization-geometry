@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 Semi AI Foundry LLC
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 from __future__ import annotations
 import json, math, csv, os, subprocess, sys

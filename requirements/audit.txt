@@ -1,0 +1,4 @@
+# SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
+# SPDX-License-Identifier: CC-BY-NC-4.0
+--only-binary=:all:
+pip-audit==2.10.1

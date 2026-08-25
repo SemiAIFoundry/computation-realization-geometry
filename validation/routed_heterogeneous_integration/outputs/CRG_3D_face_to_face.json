@@ -1,0 +1,616 @@
+{
+  "design": {
+    "name": "CRG-3D-face-to-face",
+    "package_w_mm": 34,
+    "package_h_mm": 33,
+    "grid_mm": 0.5,
+    "route_layers": 4,
+    "edge_capacity_lane_units_per_layer": 24,
+    "chiplets": [
+      {
+        "name": "base_feed_forward_io",
+        "rect": {
+          "x": 10,
+          "y": 10,
+          "w": 12,
+          "h": 12
+        },
+        "power_w": 126.527837184,
+        "tier": 0,
+        "process": "logic",
+        "test_access_lanes": 28,
+        "available_shoreline_mm": 48
+      },
+      {
+        "name": "upper_attention",
+        "rect": {
+          "x": 10,
+          "y": 10,
+          "w": 12,
+          "h": 12
+        },
+        "power_w": 92,
+        "tier": 1,
+        "process": "logic",
+        "test_access_lanes": 16,
+        "available_shoreline_mm": 48
+      },
+      {
+        "name": "hbm0",
+        "rect": {
+          "x": 1,
+          "y": 23,
+          "w": 7,
+          "h": 8
+        },
+        "power_w": 14,
+        "tier": 0,
+        "process": "memory",
+        "test_access_lanes": 12,
+        "available_shoreline_mm": 30
+      },
+      {
+        "name": "hbm1",
+        "rect": {
+          "x": 8.5,
+          "y": 23,
+          "w": 7,
+          "h": 8
+        },
+        "power_w": 14,
+        "tier": 0,
+        "process": "memory",
+        "test_access_lanes": 12,
+        "available_shoreline_mm": 30
+      },
+      {
+        "name": "hbm2",
+        "rect": {
+          "x": 18.5,
+          "y": 23,
+          "w": 7,
+          "h": 8
+        },
+        "power_w": 14,
+        "tier": 0,
+        "process": "memory",
+        "test_access_lanes": 12,
+        "available_shoreline_mm": 30
+      },
+      {
+        "name": "hbm3",
+        "rect": {
+          "x": 26,
+          "y": 23,
+          "w": 7,
+          "h": 8
+        },
+        "power_w": 14,
+        "tier": 0,
+        "process": "memory",
+        "test_access_lanes": 12,
+        "available_shoreline_mm": 30
+      }
+    ],
+    "ports": {
+      "base_h0": {
+        "name": "base_h0",
+        "chiplet": "base_feed_forward_io",
+        "x": 11,
+        "y": 22.5,
+        "tier": 0
+      },
+      "base_h1": {
+        "name": "base_h1",
+        "chiplet": "base_feed_forward_io",
+        "x": 14,
+        "y": 22.5,
+        "tier": 0
+      },
+      "base_h2": {
+        "name": "base_h2",
+        "chiplet": "base_feed_forward_io",
+        "x": 18,
+        "y": 22.5,
+        "tier": 0
+      },
+      "base_h3": {
+        "name": "base_h3",
+        "chiplet": "base_feed_forward_io",
+        "x": 21,
+        "y": 22.5,
+        "tier": 0
+      },
+      "h0": {
+        "name": "h0",
+        "chiplet": "hbm0",
+        "x": 4.5,
+        "y": 22.5,
+        "tier": 0
+      },
+      "h1": {
+        "name": "h1",
+        "chiplet": "hbm1",
+        "x": 12,
+        "y": 22.5,
+        "tier": 0
+      },
+      "h2": {
+        "name": "h2",
+        "chiplet": "hbm2",
+        "x": 22,
+        "y": 22.5,
+        "tier": 0
+      },
+      "h3": {
+        "name": "h3",
+        "chiplet": "hbm3",
+        "x": 29.5,
+        "y": 22.5,
+        "tier": 0
+      },
+      "vertical_lower": {
+        "name": "vertical_lower",
+        "chiplet": "base_feed_forward_io",
+        "x": 16,
+        "y": 16,
+        "tier": 0
+      },
+      "vertical_upper": {
+        "name": "vertical_upper",
+        "chiplet": "upper_attention",
+        "x": 16,
+        "y": 16,
+        "tier": 1
+      }
+    },
+    "nets": [
+      {
+        "name": "vertical_semantic_bridge",
+        "source": "vertical_upper",
+        "sink": "vertical_lower",
+        "bandwidth_GBs": 128.0,
+        "bytes_per_operation": 32768,
+        "lane_units": 64,
+        "kind": "activation",
+        "energy_pj_per_bit": 0.08,
+        "protocol_latency_ns": 0.6,
+        "vertical": true,
+        "routed_path": [],
+        "routed_length_mm": 0.05,
+        "max_edge_utilization": 0.0,
+        "overflow_units": 0.0
+      },
+      {
+        "name": "stack_hbm0",
+        "source": "base_h0",
+        "sink": "h0",
+        "bandwidth_GBs": 37.8,
+        "bytes_per_operation": 75600,
+        "lane_units": 19,
+        "kind": "memory",
+        "energy_pj_per_bit": 0.4,
+        "protocol_latency_ns": 2.0,
+        "vertical": false,
+        "routed_path": [
+          [
+            22,
+            45
+          ],
+          [
+            21,
+            45
+          ],
+          [
+            20,
+            45
+          ],
+          [
+            19,
+            45
+          ],
+          [
+            18,
+            45
+          ],
+          [
+            17,
+            45
+          ],
+          [
+            16,
+            45
+          ],
+          [
+            15,
+            45
+          ],
+          [
+            14,
+            45
+          ],
+          [
+            13,
+            45
+          ],
+          [
+            12,
+            45
+          ],
+          [
+            11,
+            45
+          ],
+          [
+            10,
+            45
+          ],
+          [
+            9,
+            45
+          ]
+        ],
+        "routed_length_mm": 6.5,
+        "max_edge_utilization": 0.19791666666666666,
+        "overflow_units": 0.0
+      },
+      {
+        "name": "stack_hbm1",
+        "source": "base_h1",
+        "sink": "h1",
+        "bandwidth_GBs": 37.8,
+        "bytes_per_operation": 75600,
+        "lane_units": 19,
+        "kind": "memory",
+        "energy_pj_per_bit": 0.4,
+        "protocol_latency_ns": 2.0,
+        "vertical": false,
+        "routed_path": [
+          [
+            28,
+            45
+          ],
+          [
+            27,
+            45
+          ],
+          [
+            26,
+            45
+          ],
+          [
+            25,
+            45
+          ],
+          [
+            24,
+            45
+          ]
+        ],
+        "routed_length_mm": 2.0,
+        "max_edge_utilization": 0.19791666666666666,
+        "overflow_units": 0.0
+      },
+      {
+        "name": "stack_hbm2",
+        "source": "base_h2",
+        "sink": "h2",
+        "bandwidth_GBs": 52.2,
+        "bytes_per_operation": 104400,
+        "lane_units": 27,
+        "kind": "memory",
+        "energy_pj_per_bit": 0.4,
+        "protocol_latency_ns": 2.0,
+        "vertical": false,
+        "routed_path": [
+          [
+            36,
+            45
+          ],
+          [
+            37,
+            45
+          ],
+          [
+            38,
+            45
+          ],
+          [
+            39,
+            45
+          ],
+          [
+            40,
+            45
+          ],
+          [
+            41,
+            45
+          ],
+          [
+            42,
+            45
+          ],
+          [
+            43,
+            45
+          ],
+          [
+            44,
+            45
+          ]
+        ],
+        "routed_length_mm": 4.0,
+        "max_edge_utilization": 0.28125,
+        "overflow_units": 0.0
+      },
+      {
+        "name": "stack_hbm3",
+        "source": "base_h3",
+        "sink": "h3",
+        "bandwidth_GBs": 52.2,
+        "bytes_per_operation": 104400,
+        "lane_units": 27,
+        "kind": "memory",
+        "energy_pj_per_bit": 0.4,
+        "protocol_latency_ns": 2.0,
+        "vertical": false,
+        "routed_path": [
+          [
+            42,
+            45
+          ],
+          [
+            43,
+            45
+          ],
+          [
+            44,
+            45
+          ],
+          [
+            45,
+            45
+          ],
+          [
+            46,
+            45
+          ],
+          [
+            47,
+            45
+          ],
+          [
+            48,
+            45
+          ],
+          [
+            49,
+            45
+          ],
+          [
+            50,
+            45
+          ],
+          [
+            51,
+            45
+          ],
+          [
+            52,
+            45
+          ],
+          [
+            53,
+            45
+          ],
+          [
+            54,
+            45
+          ],
+          [
+            55,
+            45
+          ],
+          [
+            56,
+            45
+          ],
+          [
+            57,
+            45
+          ],
+          [
+            58,
+            45
+          ],
+          [
+            59,
+            45
+          ]
+        ],
+        "routed_length_mm": 8.5,
+        "max_edge_utilization": 0.5625,
+        "overflow_units": 0.0
+      }
+    ],
+    "bump_pitch_um": 25,
+    "port_rows": 6,
+    "stack_depth": 2,
+    "notes": [
+      "Synthetic open face-to-face active-tier stack",
+      "Vertical semantic bridge",
+      "Four HBM stacks"
+    ]
+  },
+  "routing": {
+    "grid_nodes": 4623,
+    "routed_bundles": 4,
+    "weighted_route_length_lane_mm": 499.0,
+    "max_edge_utilization": 0.5625,
+    "total_overflow_lane_units": 0.0,
+    "edge_capacity_lane_units": 96
+  },
+  "link_timing_shoreline": {
+    "nets": [
+      {
+        "net": "vertical_semantic_bridge",
+        "kind": "activation",
+        "provisioned_bandwidth_GBs": 128.0,
+        "actual_data_rate_GBs": 14.7456,
+        "lane_units": 64,
+        "length_mm": 0.05,
+        "serialization_ns": 256.0,
+        "propagation_ns": 0.02,
+        "protocol_ns": 0.6,
+        "latency_ns": 256.62,
+        "link_power_w": 0.009437184,
+        "max_edge_utilization": 0.0,
+        "overflow_units": 0.0,
+        "signal_bumps": 136
+      },
+      {
+        "net": "stack_hbm0",
+        "kind": "memory",
+        "provisioned_bandwidth_GBs": 37.8,
+        "actual_data_rate_GBs": 34.02,
+        "lane_units": 19,
+        "length_mm": 6.5,
+        "serialization_ns": 2000.0,
+        "propagation_ns": 0.0975,
+        "protocol_ns": 2.0,
+        "latency_ns": 2002.0975,
+        "link_power_w": 0.10886400000000002,
+        "max_edge_utilization": 0.19791666666666666,
+        "overflow_units": 0.0,
+        "signal_bumps": 46
+      },
+      {
+        "net": "stack_hbm1",
+        "kind": "memory",
+        "provisioned_bandwidth_GBs": 37.8,
+        "actual_data_rate_GBs": 34.02,
+        "lane_units": 19,
+        "length_mm": 2.0,
+        "serialization_ns": 2000.0,
+        "propagation_ns": 0.03,
+        "protocol_ns": 2.0,
+        "latency_ns": 2002.03,
+        "link_power_w": 0.10886400000000002,
+        "max_edge_utilization": 0.19791666666666666,
+        "overflow_units": 0.0,
+        "signal_bumps": 46
+      },
+      {
+        "net": "stack_hbm2",
+        "kind": "memory",
+        "provisioned_bandwidth_GBs": 52.2,
+        "actual_data_rate_GBs": 46.98,
+        "lane_units": 27,
+        "length_mm": 4.0,
+        "serialization_ns": 2000.0,
+        "propagation_ns": 0.06,
+        "protocol_ns": 2.0,
+        "latency_ns": 2002.06,
+        "link_power_w": 0.150336,
+        "max_edge_utilization": 0.28125,
+        "overflow_units": 0.0,
+        "signal_bumps": 62
+      },
+      {
+        "net": "stack_hbm3",
+        "kind": "memory",
+        "provisioned_bandwidth_GBs": 52.2,
+        "actual_data_rate_GBs": 46.98,
+        "lane_units": 27,
+        "length_mm": 8.5,
+        "serialization_ns": 2000.0,
+        "propagation_ns": 0.1275,
+        "protocol_ns": 2.0,
+        "latency_ns": 2002.1275,
+        "link_power_w": 0.150336,
+        "max_edge_utilization": 0.5625,
+        "overflow_units": 0.0,
+        "signal_bumps": 62
+      }
+    ],
+    "total_link_power_w": 0.527837184,
+    "critical_link_latency_ns": 2002.1275,
+    "target_operation_rate_ops_s": 450000.0,
+    "target_operation_interval_ns": 2222.222222222222,
+    "timing_slack_ns": 220.09472222222212,
+    "timing_feasible": true,
+    "semantic_bridge_latency_ns": 256.62,
+    "worst_memory_latency_ns": 2002.1275,
+    "total_signal_bumps": 352,
+    "required_shoreline_mm": 1.4666666666666668
+  },
+  "thermal": {
+    "max_temperature_c": 54.041049323376896,
+    "mean_temperature_c": 38.55864313258794,
+    "per_chiplet": {
+      "base_feed_forward_io": {
+        "mean_c": 49.87369015953226,
+        "max_c": 54.041049323376896
+      },
+      "upper_attention": {
+        "mean_c": 48.86003414329486,
+        "max_c": 52.80287833115157
+      },
+      "hbm0": {
+        "mean_c": 37.91979161236106,
+        "max_c": 38.635058393942145
+      },
+      "hbm1": {
+        "mean_c": 38.8653535473,
+        "max_c": 41.97287964764509
+      },
+      "hbm2": {
+        "mean_c": 38.524759673056586,
+        "max_c": 41.576413753104866
+      },
+      "hbm3": {
+        "mean_c": 37.78660515373097,
+        "max_c": 38.32018804445906
+      }
+    },
+    "model": "steady-state finite-difference compact thermal-resistance network"
+  },
+  "pdn": {
+    "supply_v": 0.8,
+    "min_voltage_v": 0.7437807466551156,
+    "max_ir_drop_mv": 56.21925334488442,
+    "vertical_delivery_drop_mv": 1.2937499999999997,
+    "model": "resistive package mesh with edge supply and declared vertical-bump resistance"
+  },
+  "yield_test_reliability": {
+    "negative_binomial_system_yield_proxy": 0.4940062486797953,
+    "test_observability_score": 0.9048374180359595,
+    "arrhenius_acceleration_factor_vs_85c": 0.11694218839494852,
+    "reliability_risk_proxy": -0.842048783262908,
+    "defect_density_cm2": 0.08,
+    "cluster_parameter_alpha": 3.0
+  },
+  "physical_ppa": {
+    "package_area_mm2": 1122,
+    "base_tier_silicon_area_mm2": 368,
+    "total_active_silicon_area_mm2": 512,
+    "total_power_w": 274.527837184,
+    "critical_link_latency_ns": 2002.1275,
+    "max_temperature_c": 54.041049323376896,
+    "max_ir_drop_mv": 56.21925334488442,
+    "yield_proxy": 0.4940062486797953,
+    "test_score": 0.9048374180359595,
+    "reliability_risk_proxy": -0.842048783262908
+  },
+  "evidence_scope": {
+    "routing": "actual deterministic bundle routing on the released grid model",
+    "timing": "serialization + route-length propagation + declared protocol latency",
+    "thermal": "compact steady-state resistance network",
+    "power_delivery": "resistive package mesh plus vertical bump drop",
+    "yield": "negative-binomial die/interposer and declared assembly proxy",
+    "test": "test-access observability proxy",
+    "reliability": "Arrhenius temperature acceleration plus interconnect/stack penalty",
+    "not_claimed": "signoff routing, electromigration, SI/PI signoff, measured silicon, production yield or product reliability"
+  }
+}

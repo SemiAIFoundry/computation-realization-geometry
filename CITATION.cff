@@ -6,13 +6,14 @@ version: "1.0.0"
 authors:
   - family-names: Cinnor
     given-names: Fitih M.
+    affiliation: "Semi AI Foundry, LLC"
 abstract: >-
-  Final manuscript citation metadata, study-specific reproduction programs,
+  Manuscript citation metadata, study-specific reproduction programs,
   retained scientific records, figures, theorem checks, negative controls,
   benchmark inputs, and integrity records supporting Computation-Realization
-  Geometry. The CRG System implementation is distributed separately.
-repository-code: https://github.com/semiaifoundry/computation-realization-geometry
-url: https://semiaifoundry.com/research/
+  Geometry. The CRG Systems implementation is distributed separately.
+repository-code: https://github.com/SemiAIFoundry/computation-realization-geometry
+url: https://github.com/SemiAIFoundry/computation-realization-geometry
 keywords:
   - computation-realization geometry
   - safe commitment
@@ -55,7 +56,7 @@ references:
   doi: 10.5281/zenodo.22050638
 
 - type: article
-  title: "Closure Theorems for Computation-Realization Geometry: Interaction, Safe Commitment, Network Embedding, Conservation, and Scaling"
+  title: "Structural Theorems for Computation-Realization Geometry: Interaction, Safe Commitment, Network Embedding, Conservation, and Scaling"
   authors:
     - family-names: Cinnor
       given-names: Fitih M.
@@ -69,19 +70,3 @@ references:
       given-names: Fitih M.
   year: 2026
   doi: 10.5281/zenodo.22058422
-
-- type: report
-  title: "Physical Realization, Certified Search, and Safe-Commitment Control: Computation–Realization Systems and Embodiments Volume I"
-  authors:
-    - family-names: Cinnor
-      given-names: Fitih M.
-  year: 2026
-  doi: 10.5281/zenodo.22051089
-
-- type: report
-  title: "Evidence-Conditioned Technology Qualification: Computation–Realization Systems and Embodiments Volume II"
-  authors:
-    - family-names: Cinnor
-      given-names: Fitih M.
-  year: 2026
-  doi: 10.5281/zenodo.22051129
