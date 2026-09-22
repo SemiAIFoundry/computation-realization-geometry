@@ -1,8 +1,8 @@
 # SPDX-FileCopyrightText: 2026 Semi AI Foundry, LLC
 # SPDX-License-Identifier: CC-BY-NC-4.0
-numpy==2.5.2
-pandas==3.0.5
-tzdata==2026.3
+numpy==2.5.3
+pandas==3.0.6
+tzdata==2026.4
 matplotlib==3.10.8
 scipy==1.18.1
 pytest==9.1.1
